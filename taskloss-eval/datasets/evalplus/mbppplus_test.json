@@ -1,0 +1,1514 @@
+[
+  {
+    "prompt": "Write a function to find the shared elements from the given two lists.",
+    "answer": "\ndef similar_elements(test_tup1, test_tup2):\n  return tuple(set(test_tup1) & set(test_tup2))\n"
+  },
+  {
+    "prompt": "Write a python function to identify non-prime numbers.",
+    "answer": "\nimport math\ndef is_not_prime(n):\n    if n == 1:\n        return True\n    for i in range(2, int(math.sqrt(n))+1):\n        if n % i == 0:\n            return True\n    return False\n"
+  },
+  {
+    "prompt": "Write a function to find the n largest integers from a given list of numbers, returned in descending order.",
+    "answer": "\nimport heapq as hq\ndef heap_queue_largest(nums: list,n: int) -> list:\n  largest_nums = hq.nlargest(n, nums)\n  return largest_nums\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the two numbers differ at one bit position only or not.",
+    "answer": "\ndef is_Power_Of_Two(x: int): \n    return x > 0 and (x & (x - 1)) == 0\ndef differ_At_One_Bit_Pos(a: int,b: int):\n    return is_Power_Of_Two(a ^ b)\n"
+  },
+  {
+    "prompt": "Write a function to find all words which are at least 4 characters long in a string.",
+    "answer": "\nimport re\ndef find_char_long(text):\n  return (re.findall(r\"\\b\\w{4,}\\b\", text))\n"
+  },
+  {
+    "prompt": "Write a function to find squares of individual elements in a list.",
+    "answer": "\ndef square_nums(nums):\n return [i**2 for i in nums]\n"
+  },
+  {
+    "prompt": "Write a python function to find the minimum number of rotations (greater than 0) required to get the same string.",
+    "answer": "\ndef find_Rotations(s): \n    n = len(s)\n    s += s\n    for i in range(1, n + 1):\n        if s[i: i + n] == s[0: n]:\n            return i\n    return n\n"
+  },
+  {
+    "prompt": "Write a python function to remove first and last occurrence of a given character from the string.",
+    "answer": "\ndef remove_Occ(s,ch): \n    s = s.replace(ch, '', 1)\n    s = s[::-1].replace(ch, '', 1)[::-1]\n    return s \n"
+  },
+  {
+    "prompt": "Write a function to sort a given matrix in ascending order according to the sum of its rows.",
+    "answer": "\ndef sort_matrix(M):\n    result = sorted(M, key=sum)\n    return result\n"
+  },
+  {
+    "prompt": "Write a python function to find the volume of a triangular prism.",
+    "answer": "\ndef find_Volume(l,b,h) : \n    return ((l * b * h) / 2) \n"
+  },
+  {
+    "prompt": "Write a function to that returns true if the input string contains sequences of lowercase letters joined with an underscore and false otherwise.",
+    "answer": "\nimport re\ndef text_lowercase_underscore(text):\n        return bool(re.match('^[a-z]+(_[a-z]+)*$', text))\n"
+  },
+  {
+    "prompt": "Write a function that returns the perimeter of a square given its side length as input.",
+    "answer": "\ndef square_perimeter(a):\n  return 4*a\n"
+  },
+  {
+    "prompt": "Write a function to remove characters from the first string which are present in the second string.",
+    "answer": "\ndef remove_dirty_chars(string, second_string): \n\tfor char in second_string:\n\t\tstring = string.replace(char, '')\n\treturn string\n"
+  },
+  {
+    "prompt": "Write a function to find whether a given array of integers contains any duplicate element.",
+    "answer": "\ndef test_duplicate(arraynums):\n    return len(arraynums) != len(set(arraynums))\n"
+  },
+  {
+    "prompt": "Write a function to check if the given number is woodball or not.",
+    "answer": "\ndef is_woodall(x): \n\tif not isinstance(x, int):\n\t\treturn False\n\tif x <= 0 or x % 2 == 0:\n\t\treturn False\n\tif (x == 1): \n\t\treturn True\n\tx += 1 \n\ti = 0\n\twhile (x % 2 == 0): \n\t\tx /= 2\n\t\ti += 1\n\t\tif (i == x): \n\t\t\treturn True\n\treturn False\n"
+  },
+  {
+    "prompt": "Write a python function to check if a given number is one less than twice its reverse.",
+    "answer": "\ndef check(n):    \n    return n == 2 * int(str(n)[::-1]) - 1\n"
+  },
+  {
+    "prompt": "Write a python function to find the largest number that can be formed with the given list of digits.",
+    "answer": "\ndef find_Max_Num(arr) : \n    arr.sort(reverse = True)\n    return int(\"\".join(map(str,arr)))\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the given two integers have opposite sign or not.",
+    "answer": "\ndef opposite_Signs(x,y): \n    return ((x ^ y) < 0) \n"
+  },
+  {
+    "prompt": "Write a function to find the nth octagonal number.",
+    "answer": "\ndef is_octagonal(n): \n\treturn 3 * n * n - 2 * n \n"
+  },
+  {
+    "prompt": "Write a python function to count the number of substrings with the sum of digits equal to their length.",
+    "answer": "\nfrom collections import defaultdict\ndef count_Substrings(s):\n    n, count, sum = len(s), 0, 0\n    mp = defaultdict(lambda : 0)\n    mp[0] += 1\n    for i in range(n):\n        sum += ord(s[i]) - ord('0')\n        count += mp[sum - i - 1]\n        mp[sum - i - 1] += 1\n    return count\n"
+  },
+  {
+    "prompt": "Write a python function to find smallest number in a list.",
+    "answer": "\ndef smallest_num(xs):\n  assert len(xs) > 0, \"invalid inputs\"\n  return min(xs)\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum difference between available pairs in the given tuple list.",
+    "answer": "\ndef max_difference(test_list):\n  return max(abs(a - b) for a, b in test_list)\n"
+  },
+  {
+    "prompt": "Write a function to sort a list of tuples using the second value of each tuple.",
+    "answer": "\ndef subject_marks(subjectmarks):\n#subject_marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])\n subjectmarks.sort(key = lambda x: x[1])\n return subjectmarks\n"
+  },
+  {
+    "prompt": "Write a function to flatten a list and sum all of its elements.",
+    "answer": "\ndef recursive_list_sum(data_list):\n\ttotal = 0\n\tfor element in data_list:\n\t\tif type(element) == type([]):\n\t\t\ttotal = total + recursive_list_sum(element)\n\t\telse:\n\t\t\ttotal = total + element\n\treturn total\n"
+  },
+  {
+    "prompt": "Write a python function to count the number of positive numbers in a list.",
+    "answer": "\ndef pos_count(l):\n  return len([x for x in l if x > 0])\n"
+  },
+  {
+    "prompt": "Write a function to find the number of ways to partition a set of Bell numbers.",
+    "answer": "\ndef bell_number(n):   \n    bell = [[0 for i in range(n+1)] for j in range(n+1)] \n    bell[0][0] = 1\n    for i in range(1, n+1): \n        bell[i][0] = bell[i-1][i-1]  \n        for j in range(1, i+1): \n            bell[i][j] = bell[i-1][j-1] + bell[i][j-1]   \n    return bell[n][0] \n"
+  },
+  {
+    "prompt": "Write a python function to check whether the given array is monotonic or not.",
+    "answer": "\ndef is_Monotonic(A): \n    return all(a <= b for a, b in zip(A, A[1:])) or all(a >= b for a, b in zip(A, A[1:]))\n"
+  },
+  {
+    "prompt": "Write a function to check whether a list contains the given sublist or not.",
+    "answer": "\ndef is_sublist(l, s):\n\tif len(l) < len(s):\n\t\treturn False\n\treturn any(l[i:i+len(s)] == s for i in range(len(l)-len(s)+1))\n"
+  },
+  {
+    "prompt": "Write a function to find whether all the given tuples have equal length or not.",
+    "answer": "\ndef get_equal(Input):\n  return len(set(len(item) for item in Input)) == 1\n"
+  },
+  {
+    "prompt": "Write a function to sort a list of elements.",
+    "answer": "\ndef comb_sort(nums):\n    n = len(nums)\n    gap = n\n    shrink = 1.3\n    swapped = True\n    while gap > 1 or swapped:\n        gap = int(gap / shrink)\n        if gap < 1:\n            gap = 1\n        swapped = False\n        for i in range(n - gap):\n            if nums[i] > nums[i + gap]:\n                nums[i], nums[i + gap] = nums[i + gap], nums[i]\n                swapped = True\n    return nums\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the given number can be represented as the difference of two squares or not.",
+    "answer": "\ndef dif_Square(n): \n    # see https://www.quora.com/Which-numbers-can-be-expressed-as-the-difference-of-two-squares\n    return n % 4 != 2\n"
+  },
+  {
+    "prompt": "Write a function to check whether it follows the sequence given in the patterns array.",
+    "answer": "\ndef is_samepatterns(colors, patterns):    \n    if len(colors) != len(patterns):\n        return False    \n    pattern_color_dict = {pattern: set() for pattern in patterns}\n    for color, pattern in zip(colors, patterns):\n        pattern_color_dict[pattern].add(color)\n    return all(len(pattern_color_dict[pattern]) == 1 for pattern in patterns)\n"
+  },
+  {
+    "prompt": "Write a function to find tuples which have all elements divisible by k from the given list of tuples.",
+    "answer": "\ndef find_tuples(test_list, K):\n  res = [sub for sub in test_list if all(ele % K == 0 for ele in sub)]\n  return res\n"
+  },
+  {
+    "prompt": "Write a python function to find whether a number is divisible by 11.",
+    "answer": "\ndef is_Diff(n): \n    return n % 11 == 0 \n"
+  },
+  {
+    "prompt": "Write a python function to check whether the length of the word is odd or not.",
+    "answer": "\ndef word_len(s): \n    return len(s) % 2 == 1\n"
+  },
+  {
+    "prompt": "Write a function to find the nth tetrahedral number.",
+    "answer": "\ndef tetrahedral_number(n): \n\treturn (n * (n + 1) * (n + 2)) / 6\n"
+  },
+  {
+    "prompt": "Write a function to find the volume of a sphere.",
+    "answer": "\nimport math\ndef volume_sphere(r):\n  return (4./3.) * math.pi * (r**3)\n"
+  },
+  {
+    "prompt": "Write a function to find the nth number in the newman conway sequence.",
+    "answer": "\ndef sequence(n): \n\tif n == 1 or n == 2: \n\t\treturn 1\n\tseq = [0] * (n + 1)\n\tseq[1] = seq[2] = 1\n\tfor i in range(3, n + 1):\n\t\tseq[i] = seq[seq[i - 1]] + seq[i - seq[i - 1]]\n\treturn seq[n]\n"
+  },
+  {
+    "prompt": "Write a function to find the surface area of a sphere.",
+    "answer": "\nimport math\ndef surfacearea_sphere(r):\n  return 4 * math.pi * (r**2)\n"
+  },
+  {
+    "prompt": "Write a function to find nth centered hexagonal number.",
+    "answer": "\ndef centered_hexagonal_number(n):\n  return 3 * n * (n - 1) + 1\n"
+  },
+  {
+    "prompt": "Write a function to merge three dictionaries into a single dictionary.",
+    "answer": "\nimport collections as ct\ndef merge_dictionaries_three(dict1,dict2, dict3):\n    merged_dict = dict(ct.ChainMap({},dict1,dict2,dict3))\n    return merged_dict\n"
+  },
+  {
+    "prompt": "Write a function to get the frequency of all the elements in a list, returned as a dictionary.",
+    "answer": "\nimport collections\ndef freq_count(list1):\n  freq_count= collections.Counter(list1)\n  return freq_count\n"
+  },
+  {
+    "prompt": "Write a function to find the closest smaller number than n.",
+    "answer": "\ndef closest_num(N):\n  return (N - 1)\n"
+  },
+  {
+    "prompt": "Write a python function to find the length of the longest word.",
+    "answer": "\ndef len_log(list1):\n    return max(len(x) for x in list1)\n"
+  },
+  {
+    "prompt": "Write a function to check if a string is present as a substring in a given list of string values.",
+    "answer": "\ndef find_substring(str1, sub_str):\n   return any(sub_str in s for s in str1)\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given number is undulating or not.",
+    "answer": "\ndef is_undulating(n): \n\tdigits = [int(digit) for digit in str(n)]\n\tif len(set(digits)) != 2:\n\t\treturn False\n\treturn all(a != b for a, b in zip(digits, digits[1:]))\n"
+  },
+  {
+    "prompt": "Write a function to calculate the value of 'a' to the power 'b'.",
+    "answer": "\ndef power(a, b):\n\treturn a ** b\n"
+  },
+  {
+    "prompt": "Given a list of tuples, write a function that returns the first value of the tuple with the smallest second value.",
+    "answer": "\nfrom operator import itemgetter \ndef index_minimum(test_list):\n  res = min(test_list, key = itemgetter(1))[0]\n  return (res) \n"
+  },
+  {
+    "prompt": "Write a python function to find the length of the smallest list in a list of lists.",
+    "answer": "\ndef Find_Min_Length(lst):  \n    minLength = min(len(x) for x in lst )\n    return minLength \n"
+  },
+  {
+    "prompt": "Write a python function to find the number of divisors of a given integer.",
+    "answer": "\ndef divisor(n):\n  return sum(1 for i in range(1, n + 1) if n % i == 0)\n"
+  },
+  {
+    "prompt": "Write a function to find frequency of each element in a flattened list of lists, returned in a dictionary.",
+    "answer": "\ndef frequency_lists(list1):\n    list1 = [item for sublist in list1 for item in sublist]\n    return {x: list1.count(x) for x in list1}\n"
+  },
+  {
+    "prompt": "Write a function to multiply all the numbers in a list and divide with the length of the list.",
+    "answer": "\ndef multiply_num(numbers):  \n    from functools import reduce\n    return reduce(lambda x, y: x * y, numbers) / len(numbers)\n"
+  },
+  {
+    "prompt": "Write a function to convert the given decimal number to its binary equivalent, represented as a string with no leading zeros.",
+    "answer": "\ndef decimal_to_binary(n): \n    return bin(n).replace(\"0b\",\"\") \n"
+  },
+  {
+    "prompt": "Write a function to find the next smallest palindrome of a specified integer, returned as an integer.",
+    "answer": "\ndef next_smallest_palindrome(num):\n    if all(digit == '9' for digit in str(num)):\n        return num + 2\n    else:\n        num = [int(digit) for digit in str(num)]\n        n = len(num)\n        mid = n // 2\n        left_smaller = False\n        # if n is odd, ignore the middle digit at first\n        i = mid - 1\n        j = mid + 1 if n % 2 else mid\n        while i >= 0 and num[i] == num[j]:\n            i -= 1\n            j += 1\n        # stop if traverse end or difference found\n        if i < 0 or num[i] < num[j]:\n            left_smaller = True\n        # copy left to right\n        while i >= 0:\n            num[j] = num[i]\n            j += 1\n            i -= 1\n        # the middle digit must be incremented\n        if left_smaller:\n            carry = 1\n            i = mid - 1\n            if n % 2:\n                num[mid] += carry\n                carry = num[mid] // 10\n                num[mid] %= 10\n                j = mid + 1\n            else:\n                j = mid\n            while i >= 0:\n                num[i] += carry\n                carry = num[i] // 10\n                num[i] %= 10\n                num[j] = num[i]\n                j += 1\n                i -= 1\n    return int(\"\".join(map(str, num)))\n"
+  },
+  {
+    "prompt": "Write a function to find the kth element in the given array using 1-based indexing.",
+    "answer": "\ndef kth_element(arr, k):\n  return arr[k-1]\n"
+  },
+  {
+    "prompt": "Write a function to convert a snake case string to camel case string.",
+    "answer": "\ndef snake_to_camel(word):\n    return ''.join(x.capitalize() or '_' for x in word.split('_'))\n"
+  },
+  {
+    "prompt": "Write a function to find the Eulerian number a(n, m).",
+    "answer": "\ndef eulerian_num(n, m): \n\tif (m >= n or n == 0): \n\t\treturn 0 \n\tif (m == 0): \n\t\treturn 1 \n\treturn (n - m) * eulerian_num(n - 1, m - 1) + (m + 1) * eulerian_num(n - 1, m)\n"
+  },
+  {
+    "prompt": "Write a function to sort each sublist of strings in a given list of lists.",
+    "answer": "\ndef sort_sublists(input_list):\n    return [sorted(x) for x in input_list]\n"
+  },
+  {
+    "prompt": "Write a python function to count true booleans in the given list.",
+    "answer": "\ndef count(lst):   \n    return sum(lst) \n"
+  },
+  {
+    "prompt": "Write a function to append the given list to the given tuples.",
+    "answer": "\ndef add_lists(test_list, test_tup):\n  return test_tup + tuple(test_list)\n"
+  },
+  {
+    "prompt": "Write a function to merge three lists into a single sorted list.",
+    "answer": "\nimport heapq\ndef merge_sorted_list(num1,num2,num3):\n  return sorted(num1 + num2 + num3)\n"
+  },
+  {
+    "prompt": "Write a python function to find the number of numbers with an odd value when rotating a binary string the given number of times.",
+    "answer": "\ndef odd_Equivalent(s,n): \n    count=0\n    for i in range(0,n): \n        if (s[i] == '1'): \n            count = count + 1\n    return count \n"
+  },
+  {
+    "prompt": "Write a function to find the common elements in given nested lists.",
+    "answer": "\ndef common_in_nested_lists(nestedlist):\n    return list(set.intersection(*map(set, nestedlist)))\n"
+  },
+  {
+    "prompt": "Write a function to check if a string represents an integer or not.",
+    "answer": "\ndef check_integer(text):\n text = text.strip()\n if len(text) < 1:\n    return None\n else:\n    if text[0] in '+-':\n        text = text[1:]\n    return text.isdigit()\n"
+  },
+  {
+    "prompt": "Write a function to convert a given tuple of positive integers into a single integer.",
+    "answer": "\ndef tuple_to_int(nums):\n    return int(''.join(map(str,nums)))\n"
+  },
+  {
+    "prompt": "Write a function to convert a string to a list of strings split on the space character.",
+    "answer": "\ndef string_to_list(string): \n    return string.split(\" \")\n"
+  },
+  {
+    "prompt": "Write a python function to find the element that appears only once in a sorted array.",
+    "answer": "\ndef search(arr):\n    n = len(arr)\n    XOR = 0\n    for i in range(n) :\n        XOR = XOR ^ arr[i]\n    return (XOR)\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum absolute product between numbers in pairs of tuples within a given list.",
+    "answer": "\ndef max_product_tuple(list1):\n    return max(abs(x * y) for x, y in list1)\n"
+  },
+  {
+    "prompt": "Write a function to sum all amicable numbers from 1 to a specified number.",
+    "answer": "\ndef div_sum(num):\n    res = 1\n    i = 2\n    while i * i <= num:\n        if num % i == 0:\n            res += i\n            if i * i != num:\n                res += num / i\n        i += 1\n    return res\ndef amicable_numbers_sum(limit):\n    amicables = set()\n    for num in range(2, limit + 1):\n        if num in amicables:\n            continue\n        sum_fact = div_sum(num)\n        sum_fact2 = div_sum(sum_fact)\n        if num == sum_fact2 and num != sum_fact:\n            amicables.add(num)\n            amicables.add(sum_fact2)\n    return sum(amicables)\n"
+  },
+  {
+    "prompt": "Write a function to get the angle of a complex number.",
+    "answer": "\nimport cmath\ndef angle_complex(a,b):\n  angle=cmath.phase(a+b)\n  return angle\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum difference between the number of 0s and number of 1s in any sub-string of the given binary string.",
+    "answer": "\ndef find_length(string): \n\tcurrent_sum = 0\n\tmax_sum = 0\n\tfor c in string: \n\t\tcurrent_sum += 1 if c == '0' else -1\n\t\tif current_sum < 0: \n\t\t\tcurrent_sum = 0\n\t\tmax_sum = max(current_sum, max_sum) \n\treturn max_sum\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of common divisors of two given numbers.",
+    "answer": "\nimport math\ndef sum(a,b): \n    sum = 0\n    n = math.gcd(a, b)\n    N = int(math.sqrt(n)) + 1\n    for i in range (1, N): \n        if (n % i == 0): \n            sum += i\n            if (n / i != i): \n                sum += (n / i)\n    return sum\n"
+  },
+  {
+    "prompt": "Write a function to multiply two integers.",
+    "answer": "\ndef multiply_int(x, y):\n    return x * y\n"
+  },
+  {
+    "prompt": "Write a function to find words that are longer than n characters from a given list of words.",
+    "answer": "\ndef long_words(n, s):\n    return list(filter(lambda x: len(x) > n, s.split(' ')))\n"
+  },
+  {
+    "prompt": "Write a function to calculate whether the matrix is a magic square.",
+    "answer": "\ndef magic_square_test(my_matrix):\n    s = sum(my_matrix[0])\n    # row\n    if any(sum(row) != s for row in my_matrix):\n        return False\n    # column\n    if any(sum(row[i] for row in my_matrix) != s for i in range(len(my_matrix[0]))):\n        return False\n    # diagonal\n    if sum(my_matrix[i][i] for i in range(len(my_matrix))) != s:\n        return False\n    # anti-diagonal\n    if sum(my_matrix[i][len(my_matrix) - i - 1] for i in range(len(my_matrix))) != s:\n        return False\n    return True\n"
+  },
+  {
+    "prompt": "Write a function to find the item with maximum frequency in a given list.",
+    "answer": "\nfrom collections import defaultdict\ndef max_occurrences(nums):\n    d = defaultdict(int)\n    for n in nums:\n        d[n] += 1\n    return max(d, key=d.get)\n"
+  },
+  {
+    "prompt": "Write a python function to reverse only the vowels of a given string (where y is not a vowel).",
+    "answer": "\ndef reverse_vowels(str1):\n\tis_vowel = lambda x: x in 'aeiouAEIOU'\n\tpos = [i for i, c in enumerate(str1) if is_vowel(c)]\n\treturn ''.join(c if not is_vowel(c) else str1[pos.pop()] for c in str1)\n\t\t\n"
+  },
+  {
+    "prompt": "Write a function to convert a tuple to a string.",
+    "answer": "\ndef tup_string(tup1):\n  return ''.join(tup1)\n"
+  },
+  {
+    "prompt": "Write a function to calculate the sum of the negative numbers of a given list of numbers.",
+    "answer": "\ndef sum_negativenum(nums):\n  return sum(x for x in nums if x < 0)\n"
+  },
+  {
+    "prompt": "Write a function to find the nth hexagonal number.",
+    "answer": "\ndef hexagonal_num(n): \n\treturn n * (2 * n - 1) \n"
+  },
+  {
+    "prompt": "Write a function to find the ratio of zeroes to non-zeroes in an array of integers.",
+    "answer": "\ndef zero_count(nums):\n    if all(x == 0 for x in nums):\n        return float('inf')\n    return sum(x == 0 for x in nums) / sum(x != 0 for x in nums)\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the given number can be represented as sum of non-zero powers of 2 or not.",
+    "answer": "\ndef is_Sum_Of_Powers_Of_Two(n): \n    return n > 0 and n % 2 == 0\n"
+  },
+  {
+    "prompt": "Write a function to find the circumference of a circle.",
+    "answer": "\nimport math\ndef circle_circumference(r):\n  return 2 * math.pi * r\n"
+  },
+  {
+    "prompt": "Write a function to flatten the list of lists into a single set of numbers.",
+    "answer": "\ndef extract_singly(test_list):\n  return set([item for sublist in test_list for item in sublist])\n"
+  },
+  {
+    "prompt": "Write a function to sort a list of elements.",
+    "answer": "\ndef pancake_sort(nums):\n    arr_len = len(nums)\n    while arr_len > 1:\n        mi = nums.index(max(nums[0:arr_len]))\n        nums = nums[mi::-1] + nums[mi+1:len(nums)]\n        nums = nums[arr_len-1::-1] + nums[arr_len:len(nums)]\n        arr_len -= 1\n    return nums\n"
+  },
+  {
+    "prompt": "Write a function to count number items that are identical in the same position of three given lists.",
+    "answer": "\ndef count_samepair(list1,list2,list3):\n    return sum(m == n == o for m, n, o in zip(list1,list2,list3))\n"
+  },
+  {
+    "prompt": "Write a python function to find the maximum difference between any two elements in a given array.",
+    "answer": "\ndef max_Abs_Diff(arr): \n    return max(arr) - min(arr)\n"
+  },
+  {
+    "prompt": "Write a function that returns integers x and y that satisfy ax + by = n as a tuple, or return None if no solution exists.",
+    "answer": "\ndef find_solution(a, b, n):\n\ti = 0\n\twhile i * a <= n:\n\t\tif (n - (i * a)) % b == 0: \n\t\t\treturn (i, (n - (i * a)) // b)\n\t\ti = i + 1\n\treturn None\n"
+  },
+  {
+    "prompt": "Write a function to remove all elements from a given list present in another list.",
+    "answer": "\ndef remove_elements(list1, list2):\n    return [x for x in list1 if x not in list2]\n"
+  },
+  {
+    "prompt": "Write a function to calculate the sum (n - 2*i) from i=0 to n // 2, for instance n + (n-2) + (n-4)... (until n-x =< 0).",
+    "answer": "\ndef sum_series(n):\n  if n <= 0:\n    return 0\n  return sum(n - 2 * i for i in range(n // 2 + 1))\n"
+  },
+  {
+    "prompt": "Write a function to count the number of characters in a string that occur at the same position in the string as in the English alphabet (case insensitive).",
+    "answer": "\ndef count_char_position(str1): \n    return sum(ord(ch.lower()) - ord('a') == i for i, ch in enumerate(str1))\n"
+  },
+  {
+    "prompt": "Write a function that counts the number of pairs of integers in a list that xor to an even number.",
+    "answer": "\ndef find_even_pair(A): \n  if len(A) < 2: \n    return 0\n  return sum((a ^ b) % 2 == 0 for i, a in enumerate(A) for b in A[i + 1:])\n"
+  },
+  {
+    "prompt": "Write a python function to find the smallest power of 2 greater than or equal to n.",
+    "answer": "\ndef next_power_of_2(n): \n  if n and not n & (n - 1):\n    return n\n  res = 1\n  while n != 0: \n    n >>= 1\n    res <<= 1\n  return res; \n"
+  },
+  {
+    "prompt": "Write a function to count the number of occurrences of a number in a given list.",
+    "answer": "\ndef frequency(a,x): \n    return a.count(x)\n"
+  },
+  {
+    "prompt": "Write a function to find the sum of numbers in a list within a range specified by two indices.",
+    "answer": "\ndef sum_range_list(list1, m, n):                                                                                                                                                                                                \n    return sum(list1[m : n + 1])\n"
+  },
+  {
+    "prompt": "Write a function to find the perimeter of a regular pentagon from the length of its sides.",
+    "answer": "\ndef perimeter_pentagon(a):\n  return 5 * a\n"
+  },
+  {
+    "prompt": "Write a function to count the number of occurence of the string 'std' in a given string.",
+    "answer": "\ndef count_occurance(s):\n  return s.count('std')\n"
+  },
+  {
+    "prompt": "Write a function to check if all the elements in tuple have same data type or not.",
+    "answer": "\ndef check_type(test_tuple):\n    return all(isinstance(item, type(test_tuple[0])) for item in test_tuple)\n"
+  },
+  {
+    "prompt": "Write a function that takes in a sorted array, its length (n), and an element and returns whether the element is the majority element in the given sorted array. (The majority element is the element that occurs more than n/2 times.)",
+    "answer": "\nfrom bisect import bisect_left, bisect_right\ndef is_majority(arr, n, x):\n\tif x not in arr:\n\t\treturn False\n\tl = bisect_left(arr, x)\n\tr = bisect_right(arr, x)\n\treturn r - l > n / 2\n"
+  },
+  {
+    "prompt": "Write a python function to count the number of set bits (binary digits with value 1) in a given number.",
+    "answer": "\ndef count_Set_Bits(n): \n    return bin(n)[2:].count('1')\n"
+  },
+  {
+    "prompt": "Write a python function to remove the characters which have odd index values of a given string.",
+    "answer": "\ndef odd_values_string(str1):\n    return ''.join(str1[i] for i in range(0, len(str1), 2))\n"
+  },
+  {
+    "prompt": "Write a function to find minimum of three numbers.",
+    "answer": "\ndef min_of_three(a,b,c): \n  return min(a, b, c)\n"
+  },
+  {
+    "prompt": "Write a function that takes in a string and character, replaces blank spaces in the string with the character, and returns the string.",
+    "answer": "\ndef replace_blank(str1, char):\n    return str1.replace(' ', char)\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list and an integer n and returns a list containing the n largest items from the list.",
+    "answer": "\nimport heapq\ndef larg_nnum(list1, n):\n    return heapq.nlargest(n,list1)\n"
+  },
+  {
+    "prompt": "Write a function to find the lateral surface area of a cylinder.",
+    "answer": "\nimport math\ndef lateralsuface_cylinder(r, h):\n  return 2 * math.pi * r * h\n"
+  },
+  {
+    "prompt": "Write a function to find the volume of a cube given its side length.",
+    "answer": "\ndef volume_cube(l):\n  return l ** 3\n"
+  },
+  {
+    "prompt": "Write a python function to set all even bits of a given number.",
+    "answer": "\ndef even_bit_set_number(n): \n    mask = 2\n    while mask < n:\n        n |= mask\n        mask <<= 2\n    return n\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list of tuples and returns a dictionary mapping each unique tuple to the number of times it occurs in the list.",
+    "answer": "\nfrom collections import Counter \ndef check_occurences(test_list):\n  return dict(Counter(tuple(sorted(t)) for t in test_list))\n"
+  },
+  {
+    "prompt": "Write a python function to count the number of non-empty substrings of a given string.",
+    "answer": "\ndef number_of_substrings(str1): \n\tstr_len = len(str1) \n\treturn str_len * (str_len + 1) // 2\n"
+  },
+  {
+    "prompt": "Write a function that takes in positive integers m and n and finds the number of possible sequences of length n, such that each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m.",
+    "answer": "\ndef get_total_number_of_sequences(m, n):\n\tT=[[0 for _ in range(n + 1)] for _ in range(m + 1)] \n\tfor i in range(m + 1): \n\t\tfor j in range(n + 1): \n\t\t\tif i==0 or j==0: \n\t\t\t\tT[i][j] = 0\n\t\t\telif i<j: \n\t\t\t\tT[i][j] = 0\n\t\t\telif j==1: \n\t\t\t\tT[i][j] = i \n\t\t\telse: \n\t\t\t\tT[i][j] = T[i-1][j] + T[i//2][j-1] \n\treturn T[m][n]\n"
+  },
+  {
+    "prompt": "Write a function that takes in two lists and replaces the last element of the first list with the elements of the second list.",
+    "answer": "\ndef replace_list(list1, list2):\n    return list1[:-1] + list2\n"
+  },
+  {
+    "prompt": "Write a function to count the total number of characters in a string.",
+    "answer": "\ndef count_charac(str1):\n    return len(str1)\n"
+  },
+  {
+    "prompt": "Write a python function to find the next perfect square greater than a given number.",
+    "answer": "\nimport math  \ndef next_Perfect_Square(N): \n    if N < 0:\n        return 0\n    nextN = math.floor(math.sqrt(N)) + 1\n    return nextN * nextN \n"
+  },
+  {
+    "prompt": "Write a function that takes an array and finds the maximum sum of a bitonic subsequence for the given array, where a sequence is bitonic if it is first increasing and then decreasing.",
+    "answer": "\ndef max_sum(arr): \n\tMSIBS = arr[:] \n\tfor i in range(len(arr)): \n\t\tfor j in range(0, i): \n\t\t\tif arr[i] > arr[j] and MSIBS[i] < MSIBS[j] + arr[i]: \n\t\t\t\tMSIBS[i] = MSIBS[j] + arr[i] \n\tMSDBS = arr[:] \n\tfor i in range(1, len(arr) + 1): \n\t\tfor j in range(1, i): \n\t\t\tif arr[-i] > arr[-j] and MSDBS[-i] < MSDBS[-j] + arr[-i]: \n\t\t\t\tMSDBS[-i] = MSDBS[-j] + arr[-i] \n\tmax_sum = float(\"-Inf\") \n\tfor i, j, k in zip(MSIBS, MSDBS, arr): \n\t\tmax_sum = max(max_sum, i + j - k) \n\treturn max_sum\n"
+  },
+  {
+    "prompt": "Write a function to find the length of the longest palindromic subsequence in the given string.",
+    "answer": "\ndef lps(str1): \n\tn = len(str1)\n\tdp = [[0] * n for _ in range(n)]\n\tfor i in range(n - 1, -1, -1):\n\t\tdp[i][i] = 1\n\t\tfor j in range(i + 1, n):\n\t\t\tif str1[i] == str1[j]:\n\t\t\t\tdp[i][j] = dp[i + 1][j - 1] + 2\n\t\t\telse:\n\t\t\t\tdp[i][j] = max(dp[i + 1][j], dp[i][j - 1])\n\treturn dp[0][n - 1]\n"
+  },
+  {
+    "prompt": "Write a python function that takes in a tuple and an element and counts the occcurences of the element in the tuple.",
+    "answer": "\ndef count_X(tup, x): \n    return tup.count(x)\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list and an element and inserts the element before each element in the list, and returns the resulting list.",
+    "answer": "\ndef insert_element(list1, element):\n    list1 = [v for elt in list1 for v in (element, elt)]\n    return list1\n"
+  },
+  {
+    "prompt": "Write a python function to convert complex numbers to polar coordinates.",
+    "answer": "\nimport cmath  \ndef convert(numbers):    \n  return cmath.polar(numbers)  \n"
+  },
+  {
+    "prompt": "Write a python function that returns the number of integer elements in a given list.",
+    "answer": "\ndef count_integer(list1):\n    return sum(isinstance(x, int) for x in list1)\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list and length n, and generates all combinations (with repetition) of the elements of the list and returns a list with a tuple for each combination.",
+    "answer": "\nfrom itertools import combinations_with_replacement \ndef combinations_colors(l, n):\n    return list(combinations_with_replacement(l, n))\n"
+  },
+  {
+    "prompt": "Write a python function that takes in a non-negative number and returns the number of prime numbers less than the given non-negative number.",
+    "answer": "\ndef count_Primes_nums(n):\n    return sum(all(i % j != 0 for j in range(2, i)) for i in range(2, n))\n"
+  },
+  {
+    "prompt": "Write a function that takes in two numbers and returns a tuple with the second number and then the first number.",
+    "answer": "\ndef swap_numbers(a,b):\n    return (b, a)\n"
+  },
+  {
+    "prompt": "Write a function to maximize the given two tuples.",
+    "answer": "\ndef maximize_elements(test_tup1, test_tup2):\n  return tuple((max(a, c), max(b, d)) for (a, b), (c, d) in zip(test_tup1, test_tup2))\n"
+  },
+  {
+    "prompt": "Write a function to find the nth newman–shanks–williams prime number.",
+    "answer": "\ndef newman_prime(n): \n\tif n == 0 or n == 1: \n\t\treturn 1\n\ta = 1\n\tb = 1\n\tc = 1\n\tfor _ in range(2, n + 1):\n\t\tc = 2 * b + a\n\t\ta = b\n\t\tb = c\n\treturn c\n"
+  },
+  {
+    "prompt": "Write a function that takes in two tuples and performs mathematical division operation element-wise across the given tuples.",
+    "answer": "\ndef division_elements(test_tup1, test_tup2):\n  return tuple(ele1 / ele2 for ele1, ele2 in zip(test_tup1, test_tup2))\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list and an integer L and splits the given list into two parts where the length of the first part of the list is L, and returns the resulting lists in a tuple.",
+    "answer": "\ndef split_two_parts(list1, L):\n    return list1[:L], list1[L:]\n"
+  },
+  {
+    "prompt": "Write a function to calculate a dog's age in dog's years.",
+    "answer": "\ndef dog_age(h_age):\n\tif h_age <= 2:\n\t\td_age = h_age * 10.5\n\telse:\n\t\td_age = 21 + (h_age - 2) * 4\n\treturn d_age\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list and an integer n and splits a list for every nth element, returning a list of the resulting lists.",
+    "answer": "\ndef list_split(S, step):\n    return [S[i::step] for i in range(step)]\n"
+  },
+  {
+    "prompt": "Write a function to find the lateral surface area of a cube given its side length.",
+    "answer": "\ndef lateralsurface_cube(l):\n  return 4 * l * l\n"
+  },
+  {
+    "prompt": "Write a python function that takes in an integer n and returns the sum of the squares of the first n odd natural numbers.",
+    "answer": "\ndef square_Sum(n):  \n    return n * (4 * n * n - 1) / 3\n"
+  },
+  {
+    "prompt": "Write a function to find the n'th star number.",
+    "answer": "\ndef find_star_num(n): \n\treturn 6 * n * (n - 1) + 1 \n"
+  },
+  {
+    "prompt": "Write a function to find the ascii value of a character.",
+    "answer": "\ndef ascii_value(k):\n  return ord(k)\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of even numbers at even positions of a list.",
+    "answer": "\ndef sum_even_and_even_index(arr):  \n    return sum(x for x in arr[::2] if x % 2 == 0)\n"
+  },
+  {
+    "prompt": "Write a python function that takes in an integer n and finds the sum of the first n even natural numbers that are raised to the fifth power.",
+    "answer": "\ndef even_Power_Sum(n): \n    return sum(x ** 5 for x in range(2, 2 * n + 1, 2))\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list of tuples and returns a list containing the rear element of each tuple.",
+    "answer": "\ndef rear_extract(test_list):\n  return [x[-1] for x in test_list]\n"
+  },
+  {
+    "prompt": "Write a function that takes in two tuples and subtracts the elements of the first tuple by the elements of the second tuple with the same index.",
+    "answer": "\ndef substract_elements(test_tup1, test_tup2):\n  return tuple(x - y for x, y in zip(test_tup1, test_tup2))\n"
+  },
+  {
+    "prompt": "Write a python function that takes in a positive integer n and finds the sum of even index binomial coefficients.",
+    "answer": "\nimport math  \ndef even_binomial_Coeff_Sum( n): \n    return 1 << (n - 1)\n"
+  },
+  {
+    "prompt": "Write a function that takes in the radius and height of a cylinder and returns the the volume.",
+    "answer": "\nimport math\ndef volume_cylinder(r,h):\n  return math.pi * r * r * h\n"
+  },
+  {
+    "prompt": "Write a function that takes in a dictionary and integer n and filters the dictionary to only include entries with values greater than or equal to n.",
+    "answer": "\ndef dict_filter(dict1, n):\n    return {key : value for (key, value) in dict1.items() if value >=n}\n"
+  },
+  {
+    "prompt": "Write a function to find the number of elements that occurs before the tuple element in the given tuple.",
+    "answer": "\ndef count_first_elements(test_tup):\n  for count, ele in enumerate(test_tup):\n    if isinstance(ele, tuple):\n      break\n  return count\n"
+  },
+  {
+    "prompt": "Write a function to find the nth decagonal number.",
+    "answer": "\ndef is_num_decagonal(n): \n\treturn 4 * n * n - 3 * n \n"
+  },
+  {
+    "prompt": "Write a function that takes in an array and element and returns a tuple containing a boolean that indicates if the element is in the array and the index position of the element (or -1 if the element is not found).",
+    "answer": "\ndef sequential_search(dlist, item):\n    return item in dlist, (dlist.index(item) if item in dlist else -1)\n"
+  },
+  {
+    "prompt": "Write a python function to check if the elements of a given list are unique or not.",
+    "answer": "\ndef all_unique(test_list):\n    return len(test_list) == len(set(test_list))\n"
+  },
+  {
+    "prompt": "Write a function to subtract two lists element-wise.",
+    "answer": "\ndef sub_list(nums1,nums2):\n  return [num1 - num2 for num1, num2 in zip(nums1, nums2)]\n"
+  },
+  {
+    "prompt": "Write a python function takes in an integer and check whether the frequency of each digit in the integer is less than or equal to the digit itself.",
+    "answer": "\ndef validate(n): \n    digits = [int(digit) for digit in str(n)]\n    return all(digit >= digits.count(digit) for digit in digits)\n"
+  },
+  {
+    "prompt": "Write a function that takes in a list and element and checks whether all items in the list are equal to the given element.",
+    "answer": "\ndef check_element(list1, element):\n  return all(v == element for v in list1)\n"
+  },
+  {
+    "prompt": "Write a function that checks whether a string contains the 'a' character followed by two or three 'b' characters.",
+    "answer": "\nimport re\ndef text_match_two_three(text):\n    patterns = 'ab{2,3}'\n    return re.search(patterns, text) is not None\n"
+  },
+  {
+    "prompt": "Write a function to find the largest sum of a contiguous array in the modified array which is formed by repeating the given array k times.",
+    "answer": "\ndef max_sub_array_sum_repeated(a, n, k): \n\tmodifed = a * k\n\tpre = 0\t# dp[i-1]\n\tres = modifed[0]\n\tfor n in modifed:\n\t\tpre = max(pre + n, n)\n\t\tres = max(pre, res)\n\treturn res\n"
+  },
+  {
+    "prompt": "Write a python function takes in an integer n and returns the sum of squares of first n even natural numbers.",
+    "answer": "\ndef square_Sum(n):  \n    return 2 * n * (n + 1) * (2 * n + 1) /3\n"
+  },
+  {
+    "prompt": "Write a function to find the list of maximum length in a list of lists.",
+    "answer": "\ndef max_length(list1):\n    return max([(len(x), x) for x in list1], key=lambda x: x[0])\n"
+  },
+  {
+    "prompt": "Write a python function to find quotient of two numbers (rounded down to the nearest integer).",
+    "answer": "\ndef find(n,m):  \n    return n // m \n"
+  },
+  {
+    "prompt": "Write a function to find the third side of a right angled triangle.",
+    "answer": "\nimport math\ndef otherside_rightangle(w,h):\n  return math.sqrt(w * w + h * h)\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum value in a given heterogeneous list.",
+    "answer": "\ndef max_val(listval):\n     max_val = max(i for i in listval if isinstance(i, int)) \n     return max_val\n"
+  },
+  {
+    "prompt": "Write a python function to count inversions in an array.",
+    "answer": "\ndef get_Inv_Count(arr): \n    # consider use merge sort, but for simplicity, use brute force\n    inv_count = 0\n    for i in range(len(arr)): \n        for j in range(i + 1, len(arr)): \n            if (arr[i] > arr[j]): \n                inv_count += 1\n    return inv_count \n"
+  },
+  {
+    "prompt": "Write a function to flatten a given nested list structure.",
+    "answer": "\ndef flatten_list(list1):\n\tresult = []\n\tfor item in list1:\n\t\tif isinstance(item, list):\n\t\t\tresult.extend(flatten_list(item))\n\t\telse:\n\t\t\tresult.append(item)\n\treturn result\n"
+  },
+  {
+    "prompt": "Write a function to calculate the maximum aggregate from the list of tuples.",
+    "answer": "\nfrom collections import defaultdict\ndef max_aggregate(stdata):\n    temp = defaultdict(int)\n    for name, marks in stdata:\n        temp[name] += marks\n    return max(temp.items(), key=lambda x: x[1])\n"
+  },
+  {
+    "prompt": "Write a function to find the count of all binary sequences of length 2n such that sum of first n bits is same as sum of last n bits.",
+    "answer": "\ndef count_binary_seq(n): \n\tnCr = 1\n\tres = 1\n\tfor r in range(1, n + 1): \n\t\tnCr = (nCr * (n + 1 - r)) / r \n\t\tres += nCr * nCr \n\treturn res \n"
+  },
+  {
+    "prompt": "Write a function to find the depth of a dictionary.",
+    "answer": "\ndef dict_depth_aux(d):\n    if isinstance(d, dict):\n        return 1 + (max(map(dict_depth_aux, d.values())) if d else 0)\n    return 0\ndef dict_depth(d):\n    return dict_depth_aux(d)\n"
+  },
+  {
+    "prompt": "Write a function to return two words from a list of words starting with letter 'p'.",
+    "answer": "\nimport re\ndef start_withp(words):\n    for w in words:\n        m = re.match(\"(P\\w+)\\W(P\\w+)\", w)\n        if m:\n            return m.groups()\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum sum of increasing subsequence from prefix until ith index and also including a given kth element which is after i, i.e., k > i .",
+    "answer": "\ndef max_sum_increasing_subseq(a, n, index, k):\n\tdp = [[0 for _ in range(n)] for _ in range(n)]\n\tfor i in range(n):\n\t\tif a[i] > a[0]:\n\t\t\tdp[0][i] = a[i] + a[0]\n\t\telse:\n\t\t\tdp[0][i] = a[i]\n\tfor i in range(1, n):\n\t\tfor j in range(n):\n\t\t\tif a[j] > a[i] and j > i:\n\t\t\t\tif dp[i - 1][i] + a[j] > dp[i - 1][j]:\n\t\t\t\t\tdp[i][j] = dp[i - 1][i] + a[j]\n\t\t\t\telse:\n\t\t\t\t\tdp[i][j] = dp[i - 1][j]\n\t\t\telse:\n\t\t\t\tdp[i][j] = dp[i - 1][j]\n\treturn dp[index][k]\n"
+  },
+  {
+    "prompt": "Write a function to find the specified number of largest products from two given lists, selecting one factor from each list.",
+    "answer": "\ndef large_product(nums1, nums2, N):\n    result = sorted([x*y for x in nums1 for y in nums2], reverse=True)[:N]\n    return result\n"
+  },
+  {
+    "prompt": "Write a python function to find the maximum of two numbers.",
+    "answer": "\ndef maximum(a,b):   \n    return max(a, b)\n"
+  },
+  {
+    "prompt": "Write a function to convert a given string to a tuple of characters.",
+    "answer": "\ndef string_to_tuple(str1):\n    result = tuple(x for x in str1 if not x.isspace()) \n    return result\n"
+  },
+  {
+    "prompt": "Write a python function to set the left most unset bit.",
+    "answer": "\ndef set_left_most_unset_bit(n): \n    if not (n & (n + 1)): \n        return n \n    pos, temp, count = 0, n, 0 \n    while temp: \n        if not (temp & 1): \n            pos = count      \n        count += 1\n        temp >>= 1\n    return (n | (1 << (pos))) \n"
+  },
+  {
+    "prompt": "Write a function to find the volume of a cone.",
+    "answer": "\nimport math\ndef volume_cone(r,h):\n  return (1.0 / 3) * math.pi * r * r * h\n"
+  },
+  {
+    "prompt": "Write a python function to find the highest power of 2 that is less than or equal to n.",
+    "answer": "\ndef highest_Power_of_2(n): \n    i = 0\n    while ((1 << i) <= n): \n        i += 1\n    return (1 << (i - 1))\n"
+  },
+  {
+    "prompt": "Write a function to find the n'th lucas number.",
+    "answer": "\ndef find_lucas(n): \n\tif (n == 0): \n\t\treturn 2\n\tif (n == 1): \n\t\treturn 1\n\treturn find_lucas(n - 1) + find_lucas(n - 2) \n"
+  },
+  {
+    "prompt": "Write a function to apply a given format string to all of the elements in a list.",
+    "answer": "\ndef add_string(list_, string):\n    return [string.format(i) for i in  list_]\n"
+  },
+  {
+    "prompt": "Write a function to convert more than one list to nested dictionary.",
+    "answer": "\ndef convert_list_dictionary(l1, l2, l3):\n     result = [{x: {y: z}} for (x, y, z) in zip(l1, l2, l3)]\n     return result\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum sum possible by using the given equation f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n).",
+    "answer": "\ndef get_max_sum (n):\n\t# if n = 0, f(0) = max(5(f(0), 0)), so f(0) = 5f(0) or f(0) = 0, for both cases f(0) = 0\n\tres = [0]\n\tfor i in range(1, n + 1):\n\t\tres.append(max(res[i // 2] + res[i // 3] + res[i // 4] + res[i // 5], i))\n\treturn res[n]\n"
+  },
+  {
+    "prompt": "Write a function to check if given tuple contains no duplicates.",
+    "answer": "\ndef check_distinct(test_tup):\n  return len(test_tup) == len(set(test_tup))\n"
+  },
+  {
+    "prompt": "Write a python function to find the first non-repeated character in a given string.",
+    "answer": "\ndef first_non_repeating_character(str1):\n  for ch in str1:\n    if str1.count(ch) == 1:\n      return ch\n  return None\n"
+  },
+  {
+    "prompt": "Write a function to find the median of three numbers.",
+    "answer": "\ndef median_numbers(a,b,c):\n    return sorted([a,b,c])[1]\n"
+  },
+  {
+    "prompt": "Write a function to compute the sum of digits of each number of a given list.",
+    "answer": "\ndef sum_of_digits(nums):\n    return sum(int(el) for n in nums for el in str(n) if el.isdigit())\n"
+  },
+  {
+    "prompt": "Write a python function to find the minimum of two numbers.",
+    "answer": "\ndef minimum(a,b):   \n    return min(a,b)\n"
+  },
+  {
+    "prompt": "Write a function to check whether an element exists within a tuple.",
+    "answer": "\ndef check_tuplex(tuplex, element): \n  return element in tuplex\n"
+  },
+  {
+    "prompt": "Write a python function to find whether the parity of a given number is odd.",
+    "answer": "\ndef find_Parity(x): \n    return x % 2 != 0\n"
+  },
+  {
+    "prompt": "Write a function to find the minimum product from the pairs of tuples within a given list.",
+    "answer": "\ndef min_product_tuple(list1):\n    return min(x * y for x, y in list1)\n"
+  },
+  {
+    "prompt": "Write a function to find the minimum value in a given heterogeneous list.",
+    "answer": "\ndef min_val(listval):\n     min_val = min(i for i in listval if isinstance(i, int))\n     return min_val\n"
+  },
+  {
+    "prompt": "Write a python function to remove odd numbers from a given list.",
+    "answer": "\ndef remove_odd(l):\n    return [i for i in l if i % 2 == 0]\n"
+  },
+  {
+    "prompt": "Write a function to extract the nth element from a given list of tuples.",
+    "answer": "\ndef extract_nth_element(list1, n):\n    return [x[n] for x in list1]\n"
+  },
+  {
+    "prompt": "Write a python function to check whether any value in a sequence exists in a sequence or not.",
+    "answer": "\ndef overlapping(list1,list2):  \n    return any(v in list2 for v in list1)\n"
+  },
+  {
+    "prompt": "Write a python function to find a pair with highest product from a given array of integers.",
+    "answer": "\ndef max_Product(arr): \n    pairs = [(a, b) for a in arr for b in arr if a != b]\n    return max(pairs, key=lambda x: x[0] * x[1])\n"
+  },
+  {
+    "prompt": "Write a python function to find the element of a list having maximum length.",
+    "answer": "\ndef Find_Max(lst): \n    return max(lst, key = len)\n"
+  },
+  {
+    "prompt": "Write a function to round every number of a given list of numbers and print the total sum multiplied by the length of the list.",
+    "answer": "\ndef round_and_sum(list1):\n  l = len(list1)\n  return sum([round(i) for i in list1]) * l\n"
+  },
+  {
+    "prompt": "Write a python function to find the cube sum of first n even natural numbers.",
+    "answer": "\ndef cube_Sum(n): \n    return 2 * (n ** 2) * ((n + 1) ** 2)\n"
+  },
+  {
+    "prompt": "Write a function to concatenate each element of tuple by the delimiter.",
+    "answer": "\ndef concatenate_tuple(test_tup):\n    delim = \"-\"\n    res = ''.join([str(ele) + delim for ele in test_tup])\n    res = res[ : len(res) - len(delim)]\n    return (str(res)) \n"
+  },
+  {
+    "prompt": "Write a python function to find the average of cubes of first n natural numbers.",
+    "answer": "\ndef find_Average_Of_Cube(n):  \n    return sum([(i ** 3) for i in range(1, n + 1)]) / n\n"
+  },
+  {
+    "prompt": "Write a function to extract only the rear index element of each string in the given tuple.",
+    "answer": "\ndef extract_rear(test_tuple):\n  return [ele[-1] for ele in test_tuple]\n"
+  },
+  {
+    "prompt": "Write a function to count the number of sublists containing a particular element.",
+    "answer": "\ndef count_element_in_list(list1, x): \n    return sum(x in sublist for sublist in list1)\n"
+  },
+  {
+    "prompt": "Write a function to filter odd numbers.",
+    "answer": "\ndef filter_oddnumbers(nums):\n    return [n for n in nums if n % 2 == 1]\n"
+  },
+  {
+    "prompt": "Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format.",
+    "answer": "\nimport re\ndef change_date_format(dt):\n    return re.sub(r'(\\d{4})-(\\d{1,2})-(\\d{1,2})', '\\\\3-\\\\2-\\\\1', dt)\n"
+  },
+  {
+    "prompt": "Write a function to sort the given array by using shell sort.",
+    "answer": "\ndef shell_sort(my_list):\n    gap = len(my_list) // 2\n    while gap > 0:\n        for i in range(gap, len(my_list)):\n            current_item = my_list[i]\n            j = i\n            while j >= gap and my_list[j - gap] > current_item:\n                my_list[j] = my_list[j - gap]\n                j -= gap\n            my_list[j] = current_item\n        gap //= 2\n    return my_list\n"
+  },
+  {
+    "prompt": "Write a function to extract the elementwise and tuples from the given two tuples.",
+    "answer": "\ndef and_tuples(test_tup1, test_tup2):\n  return tuple(x & y for x, y in zip(test_tup1, test_tup2))\n"
+  },
+  {
+    "prompt": "Write a function to find the directrix of a parabola.",
+    "answer": "\ndef parabola_directrix(a, b, c): \n  return ((int)(c - ((b * b) + 1) * 4 * a ))\n"
+  },
+  {
+    "prompt": "Write a function to find the median length of a trapezium.",
+    "answer": "\ndef median_trapezium(base1,base2,height):\n    return (base1 + base2) / 2\n"
+  },
+  {
+    "prompt": "Write a function to check whether the entered number is greater than the elements of the given array.",
+    "answer": "\ndef check_greater(arr, number):\n  return all(number > el for el in arr)\n"
+  },
+  {
+    "prompt": "Write a python function to find the last digit of a given number.",
+    "answer": "\ndef last_Digit(n) :\n    if n < 0: \n        n = -n\n    return n % 10\n"
+  },
+  {
+    "prompt": "Write a python function to return the negative numbers in a list.",
+    "answer": "\ndef neg_nos(list1):\n  return [i for i in list1 if i < 0]\n"
+  },
+  {
+    "prompt": "Write a function to remove odd characters in a string.",
+    "answer": "\ndef remove_odd(str1):\n    return str1[1::2]\n"
+  },
+  {
+    "prompt": "Write a function to join a list of multiple integers into a single integer.",
+    "answer": "\ndef multiple_to_single(L):\n  return int(''.join(map(str,L)))\n"
+  },
+  {
+    "prompt": "Write a function to find the first adverb and their positions in a given sentence.",
+    "answer": "\nimport re\ndef find_adverb_position(text):\n    for m in re.finditer(r\"\\w+ly\", text):\n        return (m.start(), m.end(), m.group(0))\n"
+  },
+  {
+    "prompt": "Write a function to find the surface area of a cube of a given size.",
+    "answer": "\ndef surfacearea_cube(l):\n  return 6 * l * l\n"
+  },
+  {
+    "prompt": "Write a function to perform index wise multiplication of tuple elements in the given two tuples.",
+    "answer": "\ndef index_multiplication(test_tup1, test_tup2):\n  return tuple(tuple(a * b for a, b in zip(tup1, tup2))\n   for tup1, tup2 in zip(test_tup1, test_tup2))\n"
+  },
+  {
+    "prompt": "Write a python function to count the occurence of all elements of list in a tuple.",
+    "answer": "\nfrom collections import Counter \ndef count_Occurrence(tup, lst): \n    return sum(tup.count(ele) for ele in lst)\n"
+  },
+  {
+    "prompt": "Write a function to find cubes of individual elements in a list.",
+    "answer": "\ndef cube_nums(nums):\n    return [n**3 for n in nums]\n"
+  },
+  {
+    "prompt": "Write a function to calculate the sum of perrin numbers.",
+    "answer": "\ndef cal_sum(n): \n\ta = 3\n\tb = 0\n\tc = 2\n\tif (n == 0): \n\t\treturn 3\n\tif (n == 1): \n\t\treturn 3\n\tif (n == 2): \n\t\treturn 5\n\tsum = 5\n\twhile (n > 2): \n\t\td = a + b \n\t\tsum = sum + d \n\t\ta = b \n\t\tb = c \n\t\tc = d \n\t\tn = n - 1\n\treturn sum\n"
+  },
+  {
+    "prompt": "Write a function to extract specified size of strings from a given list of string values.",
+    "answer": "\ndef extract_string(str1, l):\n    return [e for e in str1 if len(e) == l] \n"
+  },
+  {
+    "prompt": "Write a function to remove all whitespaces from the given string.",
+    "answer": "\nimport re\ndef remove_whitespaces(text1):\n  return text1.replace(' ', '')\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of even factors of a number.",
+    "answer": "\nimport math \ndef sumofFactors(n) : \n    if (n % 2 != 0) : \n        return 0\n    return sum([i for i in range(2, n + 1) if n % i == 0 and i % 2 == 0])\n"
+  },
+  {
+    "prompt": "Write a function that matches a word containing 'z'.",
+    "answer": "\nimport re\ndef text_match_wordz(text):\n        return 'z' in text\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given month number contains 31 days or not.",
+    "answer": "\ndef check_monthnumb_number(monthnum2):\n  return monthnum2 in [1, 3, 5, 7, 8, 10, 12]\n"
+  },
+  {
+    "prompt": "Write a function to reverse each string in a given list of string values.",
+    "answer": "\ndef reverse_string_list(stringlist):\n    return [x[::-1] for x in stringlist]\n"
+  },
+  {
+    "prompt": "Write a python function to find the sublist having minimum length.",
+    "answer": "\ndef Find_Min(lst): \n    return min(lst, key=len) \n"
+  },
+  {
+    "prompt": "Write a function to find the area of a rectangle.",
+    "answer": "\ndef rectangle_area(l,b):\n  return l * b\n"
+  },
+  {
+    "prompt": "Write a function to remove uppercase substrings from a given string.",
+    "answer": "\ndef remove_uppercase(str1):\n  return ''.join(c for c in str1 if c.islower())\n"
+  },
+  {
+    "prompt": "Write a python function to get the first element of each sublist.",
+    "answer": "\ndef Extract(lst): \n    return [item[0] for item in lst] \n"
+  },
+  {
+    "prompt": "Write a function to find all possible combinations of the elements of a given list.",
+    "answer": "\ndef combinations_list(list1):\n    if len(list1) == 0:\n        return [[]]\n    result = []\n    for el in combinations_list(list1[1:]):\n        result += [el, el+[list1[0]]]\n    return result\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum product subarray of the given array.",
+    "answer": "\ndef max_subarray_product(arr):\n\tmax_so_far = min_ending = max_ending = arr[0]\n\tfor n in arr[1:]:\n\t\tmin_ending, max_ending = min(n, min_ending * n, max_ending * n), max(n, min_ending * n, max_ending * n)\n\t\tmax_so_far = max(max_so_far, max_ending)\n\treturn max_so_far\n"
+  },
+  {
+    "prompt": "Write a function to drop empty items from a given dictionary.",
+    "answer": "\ndef drop_empty(dict1):\n  dict1 = {key:value for (key, value) in dict1.items() if value is not None}\n  return dict1\n"
+  },
+  {
+    "prompt": "Write a function to find the maximum product formed by multiplying numbers of an increasing subsequence of that array.",
+    "answer": "\ndef max_product(arr):   \n  # record the correspond ending element to maintain the increasing subsequence\n  ret = max_ending = min_ending = (arr[0], arr[0])\n  for n in arr[1:]:\n    if n > max_ending[1]:\n      max_ending = max((max_ending[0] * n, n), max_ending, key=lambda x: x[0])\n    else:\n      max_ending = (n, n)\n    if n > min_ending[1]:\n      min_ending = min((min_ending[0] * n, n), min_ending, key=lambda x: x[0])\n    else:\n      min_ending = (n, n)\n    ret = max(ret, max_ending, min_ending, key=lambda x: x[0])\n  return ret[0]\n"
+  },
+  {
+    "prompt": "Write a function to find the pairwise addition of the neighboring elements of the given tuple.",
+    "answer": "\ndef add_pairwise(test_tup):\n  return tuple(a + b for a, b in zip(test_tup, test_tup[1:]))\n"
+  },
+  {
+    "prompt": "Write a python function to find the product of the array multiplication modulo n.",
+    "answer": "\ndef find_remainder(arr, n): \n    from functools import reduce\n    return reduce(lambda x, y: x * y, arr) % n\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the given list contains consecutive numbers or not.",
+    "answer": "\ndef check_Consecutive(l): \n    return sorted(l) == list(range(min(l),max(l)+1)) \n"
+  },
+  {
+    "prompt": "Write a function to find the tuple intersection of elements in the given tuple list irrespective of their order.",
+    "answer": "\ndef tuple_intersection(test_list1, test_list2):\n  return set([tuple(sorted(ele)) for ele in test_list1]) & set([tuple(sorted(ele)) for ele in test_list2])\n"
+  },
+  {
+    "prompt": "Write a function to replace characters in a string.",
+    "answer": "\ndef replace_char(str1, ch, newch):\n    return str1.replace(ch, newch)\n"
+  },
+  {
+    "prompt": "Write a function to sort a dictionary by value.",
+    "answer": "\ndef sort_counter(dict1):\n return sorted(dict1.items(), key=lambda x: x[1], reverse=True)\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of the largest and smallest value in a given array.",
+    "answer": "\ndef big_sum(nums):\n      return max(nums) + min(nums)\n"
+  },
+  {
+    "prompt": "Write a python function to convert the given string to lower case.",
+    "answer": "\ndef is_lower(string):\n    return string.lower()\n"
+  },
+  {
+    "prompt": "Write a function to remove lowercase substrings from a given string.",
+    "answer": "\nimport re\ndef remove_lowercase(str1):\n    return re.sub('[a-z]', '', str1)\n"
+  },
+  {
+    "prompt": "Write a python function to find the first digit of a given number.",
+    "answer": "\ndef first_Digit(n) :  \n    return int(str(n)[0])\n"
+  },
+  {
+    "prompt": "Write a python function which takes a list of integers and only returns the odd ones.",
+    "answer": "\ndef Split(l): \n    return list(filter(lambda x: x % 2 == 1, l))\n"
+  },
+  {
+    "prompt": "Write a python function to find the difference between the sum of cubes of the first n natural numbers and the sum of the first n natural numbers.",
+    "answer": "\ndef difference(n) :  \n    S = (n*(n + 1))//2;  \n    res = S*(S-1);  \n    return res;  \n"
+  },
+  {
+    "prompt": "Write a python function to count the number of pairs whose xor value is odd.",
+    "answer": "\ndef find_Odd_Pair(A,N) : \n    oddPair = 0\n    for i in range(0,N) :  \n        for j in range(i+1,N) :  \n            if ((A[i] ^ A[j]) % 2 != 0):  \n                oddPair+=1  \n    return oddPair  \n"
+  },
+  {
+    "prompt": "Write a function to toggle the case of all characters in a string.",
+    "answer": "\ndef toggle_string(string):\n return string.swapcase()\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of the per-digit difference between two integers.",
+    "answer": "\ndef digit_distance_nums(n1, n2):\n    return sum([abs(int(c1) - int(c2)) for c1, c2 in zip(str(n1), str(n2))])\n"
+  },
+  {
+    "prompt": "Write a function to find the sum of the largest contiguous sublist in the given list.",
+    "answer": "\ndef max_sub_array_sum(a, size):\n  max_so_far = 0\n  max_ending_here = 0\n  for i in range(0, size):\n    max_ending_here = max_ending_here + a[i]\n    if max_ending_here < 0:\n      max_ending_here = 0\n    elif (max_so_far < max_ending_here):\n      max_so_far = max_ending_here\n  return max_so_far\n"
+  },
+  {
+    "prompt": "Write a function to find the union of the elements of two given tuples and output them in sorted order.",
+    "answer": "\ndef union_elements(test_tup1, test_tup2):\n  return tuple(sorted(set(test_tup1 + test_tup2)))\n"
+  },
+  {
+    "prompt": "Write a python function to find the length of the longest sublists.",
+    "answer": "\ndef Find_Max_Length(lst):  \n    return len(max(lst, key = len))\n"
+  },
+  {
+    "prompt": "Write a function to extract values between quotation marks from a string.",
+    "answer": "\nimport re\ndef extract_values(text):\n return (re.findall(r'\"(.*?)\"', text))\n"
+  },
+  {
+    "prompt": "Write a python function which takes a list of integers and counts the number of possible unordered pairs where both elements are unequal.",
+    "answer": "\ndef count_Pairs(arr,n): \n    cnt = 0; \n    for i in range(n): \n        for j in range(i + 1,n): \n            if (arr[i] != arr[j]): \n                cnt += 1; \n    return cnt; \n"
+  },
+  {
+    "prompt": "Write a python function to split a string into characters.",
+    "answer": "\ndef split(word): \n    return list(word)\n"
+  },
+  {
+    "prompt": "Write a function to get the sum of the digits of a non-negative integer.",
+    "answer": "\ndef sum_digits(n):\n  return sum(map(int, str(n)))\n"
+  },
+  {
+    "prompt": "Write a function to check whether a specified list is sorted or not.",
+    "answer": "\ndef issort_list(list1):\n    return all(a <= b for a, b in zip(list1, list1[1:]))\n"
+  },
+  {
+    "prompt": "Write a function to create a list of N empty dictionaries.",
+    "answer": "\ndef empty_list(length):\n return [{} for _ in range(length)]\n"
+  },
+  {
+    "prompt": "Write a function to sort each sublist of strings in a given list of lists.",
+    "answer": "\ndef sort_sublists(list1):\n    return list(map(sorted,list1)) \n"
+  },
+  {
+    "prompt": "Write a python function to remove duplicate numbers from a given number of lists.",
+    "answer": "\ndef two_unique_nums(nums):\n  return [n for n in nums if nums.count(n)==1]\n"
+  },
+  {
+    "prompt": "Write a python function to calculate the product of the unique numbers in a given list.",
+    "answer": "\ndef unique_product(list_data):\n    from functools import reduce\n    return reduce(lambda x, y: x*y, set(list_data))\n"
+  },
+  {
+    "prompt": "Write a python function to check whether a list is sublist of another or not.",
+    "answer": "\ndef is_Sub_Array(A,B): \n    a = 0\n    b = 0\n    while a < len(A) and b < len(B):\n        if A[a] == B[b]:\n            a += 1\n            b += 1\n        else:\n            a += 1\n    return b == len(B)\n"
+  },
+  {
+    "prompt": "Write a python function to find the last digit in factorial of a given number.",
+    "answer": "\ndef last_Digit_Factorial(n): \n    if (n == 0): \n      return 1\n    elif (n <= 2): \n      return n  \n    elif (n == 3): \n      return 6\n    elif (n == 4): \n      return 4 \n    else: \n      return 0\n"
+  },
+  {
+    "prompt": "Write a function to interleave 3 lists of the same length into a single flat list.",
+    "answer": "\ndef interleave_lists(list1, list2, list3):\n    return [el for pair in zip(list1, list2, list3) for el in pair]\n"
+  },
+  {
+    "prompt": "Write a function to find the dissimilar elements in the given two tuples.",
+    "answer": "\ndef find_dissimilar(test_tup1, test_tup2):\n  return tuple(set(test_tup1) ^ set(test_tup2))\n"
+  },
+  {
+    "prompt": "Write a function to remove uneven elements in the nested mixed tuple.",
+    "answer": "\ndef even_ele(test_tuple, ): \n\tres = tuple() \n\tfor ele in test_tuple: \n\t\tif isinstance(ele, tuple): \n\t\t\tres += (even_ele(ele), ) \n\t\telif ele % 2 == 0: \n\t\t\tres += (ele, ) \n\treturn res \ndef extract_even(test_tuple):\n\treturn even_ele(test_tuple)\n"
+  },
+  {
+    "prompt": "Write a python function to find the surface area of a square pyramid with a given base edge and height.",
+    "answer": "\ndef surface_Area(b,s): \n    return 2 * b * s + pow(b,2) \n"
+  },
+  {
+    "prompt": "Write a function which returns nth catalan number.",
+    "answer": "\ndef catalan_number(num):\n    if num <= 1:\n         return 1   \n    res_num = 0\n    for i in range(num):\n        res_num += catalan_number(i) * catalan_number(num - i - 1)\n    return res_num\n"
+  },
+  {
+    "prompt": "Write a function to find the n most expensive items in a given dataset.",
+    "answer": "\nimport heapq\ndef expensive_items(items,n):\n  expensive_items = heapq.nlargest(n, items, key=lambda s: s['price'])\n  return expensive_items\n"
+  },
+  {
+    "prompt": "Write a python function to split a list at the nth eelment and add the first part to the end.",
+    "answer": "\ndef split_Arr(l, n):\n  return l[n:] + l[:n]\n"
+  },
+  {
+    "prompt": "Write a function to convert a list to a tuple.",
+    "answer": "\ndef list_tuple(listx):\n  return tuple(listx)\n"
+  },
+  {
+    "prompt": "Write a python function to find the difference between largest and smallest value in a given list.",
+    "answer": "\ndef big_diff(nums):\n     return max(nums) - min(nums)\n"
+  },
+  {
+    "prompt": "Write a function to find perfect squares between two given numbers.",
+    "answer": "\nimport math\ndef perfect_squares(a, b):\n    if a > b:\n        a, b = b, a\n    if b < 0:\n        return []\n    if a < 0:\n        a = 0\n    return list(filter(lambda x: math.sqrt(x).is_integer(), range(a, b+1)))\n"
+  },
+  {
+    "prompt": "Write a function to convert polar coordinates to rectangular coordinates.",
+    "answer": "\nimport cmath\ndef polar_rect(x,y):\n    cn = cmath.polar(complex(x, y))\n    cn1 = cmath.rect(2, cmath.pi)\n    return (cn, cn1)\n"
+  },
+  {
+    "prompt": "Write a python function to interchange the first and last elements in a list.",
+    "answer": "\ndef swap_List(newList): \n    return newList[-1:] + newList[1:-1] + newList[:1]\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of the product of consecutive binomial co-efficients.",
+    "answer": "\ndef binomial_Coeff(n, k): \n    C = [0] * (k + 1); \n    C[0] = 1; # nC0 is 1 \n    for i in range(1,n + 1):  \n        for j in range(min(i, k),0,-1): \n            C[j] = C[j] + C[j - 1]; \n    return C[k]; \ndef sum_Of_product(n): \n    return binomial_Coeff(2 * n, n - 1); \n"
+  },
+  {
+    "prompt": "Write a function to remove leading zeroes from an ip address.",
+    "answer": "\nimport re\ndef removezero_ip(ip):\n return re.sub('\\.[0]*', '.', ip)\n"
+  },
+  {
+    "prompt": "Write a function to find the difference of the first even and first odd number of a given list.",
+    "answer": "\ndef diff_even_odd(list1):\n    first_even = next((el for el in list1 if el%2==0), -1)\n    first_odd = next((el for el in list1 if el%2!=0), -1)\n    return (first_even - first_odd)\n"
+  },
+  {
+    "prompt": "Write a function to find the size in bytes of the given tuple.",
+    "answer": "\nimport sys \ndef tuple_size(tuple_list):\n  return sys.getsizeof(tuple_list)\n"
+  },
+  {
+    "prompt": "Write a function to find kth element from the given two sorted arrays.",
+    "answer": "\ndef find_kth(arr1, arr2, k):\n\treturn sorted(arr1 + arr2)[k - 1]\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given number is armstrong or not.",
+    "answer": "\ndef armstrong_number(number):\n    order = len(str(number))\n    return sum([int(i) ** order for i in str(number)]) == number\n"
+  },
+  {
+    "prompt": "Write a function to find sum and average of first n natural numbers.",
+    "answer": "\ndef sum_average(number):\n   sum_ = sum(range(1, number+1))\n   average = sum_/number\n   return sum_, average\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the given number is even or not.",
+    "answer": "\ndef is_Even(n) : \n    return n % 2 == 0\n"
+  },
+  {
+    "prompt": "Write a python function to find the first repeated character in a given string.",
+    "answer": "\ndef first_repeated_char(str1):\n  for index, c in enumerate(str1):\n    if str1[:index + 1].count(c) > 1:\n      return c\n  return None\n"
+  },
+  {
+    "prompt": "Write a function to get all lucid numbers smaller than or equal to a given integer.",
+    "answer": "\ndef get_ludic(n):\n\tludics = []\n\tfor i in range(1, n + 1):\n\t\tludics.append(i)\n\tindex = 1\n\twhile(index != len(ludics)):\n\t\tfirst_ludic = ludics[index]\n\t\tremove_index = index + first_ludic\n\t\twhile(remove_index < len(ludics)):\n\t\t\tludics.remove(ludics[remove_index])\n\t\t\tremove_index = remove_index + first_ludic - 1\n\t\tindex += 1\n\treturn ludics\n"
+  },
+  {
+    "prompt": "Write a function to reverse words seperated by spaces in a given string.",
+    "answer": "\ndef reverse_words(s):\n\treturn ' '.join(reversed(s.split()))\n"
+  },
+  {
+    "prompt": "Write a function to check if the given integer is a prime number.",
+    "answer": "\nimport math\ndef prime_num(num):\n  if num <= 1:\n    return False\n  for i in range(2, int(math.sqrt(num)) + 1):\n    if num % i == 0:\n      return False\n  return True\n"
+  },
+  {
+    "prompt": "Write a function to convert degrees to radians.",
+    "answer": "\nimport math\ndef radian_degree(degree):\n    return degree * math.pi / 180\n"
+  },
+  {
+    "prompt": "Write a function to search a string for a regex pattern. The function should return the matching subtring, a start index and an end index.",
+    "answer": "\nimport re\ndef find_literals(text, pattern):\n  match = re.search(pattern, text)\n  if match is None:\n    return None\n  s = match.start()\n  e = match.end()\n  return (match.re.pattern, s, e)\n"
+  },
+  {
+    "prompt": "Write a python function to find nth bell number.",
+    "answer": "\ndef bell_Number(n): \n    bell = [[0 for i in range(n+1)] for j in range(n+1)] \n    bell[0][0] = 1\n    for i in range(1, n+1):\n        bell[i][0] = bell[i-1][i-1]\n        for j in range(1, i+1): \n            bell[i][j] = bell[i-1][j-1] + bell[i][j-1] \n    return bell[n][0] \n"
+  },
+  {
+    "prompt": "Write a python function which takes a list and returns a list with the same elements, but the k'th element removed.",
+    "answer": "\ndef remove_kth_element(list1, k):\n    return list1[:k-1] + list1[k:]\n"
+  },
+  {
+    "prompt": "Write a function which given a matrix represented as a list of lists returns the max of the n'th column.",
+    "answer": "\ndef max_of_nth(test_list, N):\n  return max([sub[N] for sub in test_list])\n"
+  },
+  {
+    "prompt": "Write a python function which takes a list of lists, where each sublist has two elements, and returns a list of two lists where the first list has the first element of each sublist and the second one has the second.",
+    "answer": "\ndef merge(lst):  \n    return [list(ele) for ele in list(zip(*lst))] \n"
+  },
+  {
+    "prompt": "Write a function to find the cumulative sum of all the values that are present in the given tuple list.",
+    "answer": "\ndef cummulative_sum(test_list):\n  return sum(map(sum, test_list))\n"
+  },
+  {
+    "prompt": "Write a function which takes a tuple of tuples and returns the average value for each tuple as a list.",
+    "answer": "\ndef average_tuple(nums):\n    result = [sum(x) / len(x) for x in zip(*nums)]\n    return result\n"
+  },
+  {
+    "prompt": "Write a function which takes two tuples of the same length and performs the element wise modulo.",
+    "answer": "\ndef tuple_modulo(test_tup1, test_tup2):\n  res = tuple(ele1 % ele2 for ele1, ele2 in zip(test_tup1, test_tup2)) \n  return (res) \n"
+  },
+  {
+    "prompt": "Write a function to divide two lists element wise.",
+    "answer": "\ndef div_list(nums1,nums2):\n  result = map(lambda x, y: x / y, nums1, nums2)\n  return list(result)\n"
+  },
+  {
+    "prompt": "Write a function to move all the numbers to the end of the given string.",
+    "answer": "\ndef move_num(test_str):\n  num_str = ''.join(i for i in test_str if i.isdigit())\n  else_str = ''.join(i for i in test_str if not i.isdigit())\n  return else_str + num_str\n"
+  },
+  {
+    "prompt": "Write a function to find the size of the largest subset of a list of numbers so that every pair is divisible.",
+    "answer": "\ndef largest_subset(a):\n\tn = len(a)\n\tdp = [0 for _ in range(n)]\n\tdp[n - 1] = 1; \n\tfor i in range(n - 2, -1, -1):\n\t\tmxm = 0\n\t\tfor j in range(i + 1, n):\n\t\t\tif a[j] % a[i] == 0 or a[i] % a[j] == 0:\n\t\t\t\tmxm = max(mxm, dp[j])\n\t\tdp[i] = 1 + mxm\n\treturn max(dp)\n"
+  },
+  {
+    "prompt": "Write a function to find the median of two sorted lists of same size.",
+    "answer": "\ndef get_median(arr1, arr2, n):\n  i = 0\n  j = 0\n  m1 = -1\n  m2 = -1\n  count = 0\n  while count < n + 1:\n    count += 1\n    if i == n:\n      m1 = m2\n      m2 = arr2[0]\n      break\n    elif j == n:\n      m1 = m2\n      m2 = arr1[0]\n      break\n    if arr1[i] <= arr2[j]:\n      m1 = m2\n      m2 = arr1[i]\n      i += 1\n    else:\n      m1 = m2\n      m2 = arr2[j]\n      j += 1\n  return (m1 + m2)/2\n"
+  },
+  {
+    "prompt": "Write a function to compute the n-th power of each number in a list.",
+    "answer": "\ndef nth_nums(nums, n):\n nth_nums = list(map(lambda x: x ** n, nums))\n return nth_nums\n"
+  },
+  {
+    "prompt": "Write a python function to convert a given string to uppercase.",
+    "answer": "\ndef is_upper(string):\n  return string.upper()\n"
+  },
+  {
+    "prompt": "Write a python function to find the area of the largest triangle that can be inscribed in a semicircle with a given radius.",
+    "answer": "\ndef triangle_area(r) :  \n    if r < 0 : \n        return None\n    return r * r \n"
+  },
+  {
+    "prompt": "Write a function to replace all spaces in the given string with '%20'.",
+    "answer": "\ndef replace_spaces(string):\n  return string.replace(\" \", \"%20\")\n"
+  },
+  {
+    "prompt": "Write a python function to find even numbers from a list of numbers.",
+    "answer": "\ndef Split(l): \n    return [num for num in l if num % 2 == 0]\n"
+  },
+  {
+    "prompt": "Write a function to extract all the adjacent coordinates of the given coordinate tuple.",
+    "answer": "\ndef adjac(ele, sub = []): \n  if not ele: \n     yield sub \n  else: \n     yield from [idx for j in range(ele[0] - 1, ele[0] + 2) \n                for idx in adjac(ele[1:], sub + [j])] \ndef get_coordinates(test_tup):\n  return list(adjac(test_tup))\n"
+  },
+  {
+    "prompt": "Write a function to replace whitespaces with an underscore and vice versa in a given string.",
+    "answer": "\ndef replace_spaces(text):\n  return \"\".join(\" \" if c == \"_\" else (\"_\" if c == \" \" else c) for c in text)\n"
+  },
+  {
+    "prompt": "Write a python function to move all zeroes to the end of the given list.",
+    "answer": "\ndef move_zero(num_list):\n    zeros = [0] * num_list.count(0)\n    front = [i for i in num_list if i != 0]\n    return front + zeros\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of xor of all pairs of numbers in the given list.",
+    "answer": "\ndef pair_xor_Sum(arr,n) : \n    ans = 0 \n    for i in range(0,n) :    \n        for j in range(i + 1,n) :   \n            ans = ans + (arr[i] ^ arr[j])          \n    return ans \n"
+  },
+  {
+    "prompt": "Write a function to sort the given list.",
+    "answer": "\nimport heapq as hq\ndef heap_sort(iterable):\n    hq.heapify(iterable)\n    return [hq.heappop(iterable) for _ in range(len(iterable))]\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given amount has no profit and no loss",
+    "answer": "\ndef noprofit_noloss(actual_cost, sale_amount): \n  return actual_cost == sale_amount\n"
+  },
+  {
+    "prompt": "Write a function to calculate the wind chill index rounded to the next integer given the wind velocity in km/h and a temperature in celsius.",
+    "answer": "\nimport math\ndef wind_chill(v,t):\n windchill = 13.12 + 0.6215*t -  11.37*math.pow(v, 0.16) + 0.3965*t*math.pow(v, 0.16)\n return int(round(windchill, 0))\n"
+  },
+  {
+    "prompt": "Write a function to sum the length of the names of a given list of names after removing the names that start with a lowercase letter.",
+    "answer": "\ndef sample_nam(sample_names):\n  sample_names=list(filter(lambda el:el[0].isupper() and el[1:].islower(),sample_names))\n  return len(''.join(sample_names))\n"
+  },
+  {
+    "prompt": "Write a function to find the nth nonagonal number.",
+    "answer": "\ndef is_nonagonal(n): \n\treturn int(n * (7 * n - 5) / 2) \n"
+  },
+  {
+    "prompt": "Write a function that checks if a strings contains 'z', except at the start and end of the word.",
+    "answer": "\nimport re\ndef text_match_wordz_middle(text):\n\treturn re.search(r'\\Bz\\B',  text) is not None\n"
+  },
+  {
+    "prompt": "Write a python function to reverse an array upto a given position.",
+    "answer": "\ndef reverse_Array_Upto_K(input, k): \n  return input[k-1::-1] + input[k:]\n"
+  },
+  {
+    "prompt": "Write a function to add a dictionary to the tuple. The output should be a tuple.",
+    "answer": "\ndef add_dict_to_tuple(test_tup, test_dict):\n  return test_tup + (test_dict, )\n"
+  },
+  {
+    "prompt": "Given a square matrix of size N*N given as a list of lists, where each cell is associated with a specific cost. A path is defined as a specific sequence of cells that starts from the top-left cell move only right or down and ends on bottom right cell. We want to find a path with the maximum average over all existing paths. Average is computed as total cost divided by the number of cells visited in the path.",
+    "answer": "\ndef maxAverageOfPath(cost):\n  N = len(cost)\n  dp = [[0 for _ in range(N + 1)] for _ in range(N + 1)]\n  dp[0][0] = cost[0][0]\n  for i in range(1, N):\n    dp[i][0] = dp[i - 1][0] + cost[i][0]\n  for j in range(1, N):\n    dp[0][j] = dp[0][j - 1] + cost[0][j]\n  for i in range(1, N):\n    for j in range(1, N):\n      dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + cost[i][j]\n  # all paths are of length 2 * N - 1, so just divide by that\n  return dp[N - 1][N - 1] / (2 * N - 1)\n"
+  },
+  {
+    "prompt": "The input is given as - a dictionary with a student name as a key and a tuple of float (student_height, student_weight) as a value, - minimal height, - minimal weight. Write a function to filter students that have height and weight above the minimum.",
+    "answer": "\ndef filter_data(students,h,w):\n    return {k: s for k, s in students.items() if s[0] >= h and s[1] >= w}\n"
+  },
+  {
+    "prompt": "The input is defined as two lists of the same length. Write a function to count indices where the lists have the same values.",
+    "answer": "\nfrom operator import eq\ndef count_same_pair(nums1, nums2):\n    result = sum(map(eq, nums1, nums2))\n    return result\n"
+  },
+  {
+    "prompt": "Write a function that takes base and power as arguments and calculate the sum of all digits of the base to the specified power.",
+    "answer": "\ndef power_base_sum(base, power):\n    return sum([int(i) for i in str(pow(base, power))])\n"
+  },
+  {
+    "prompt": "Write a function to extract values between quotation marks \" \" of the given string.",
+    "answer": "\nimport re\ndef extract_quotation(text1):\n  return re.findall(r'\"(.*?)\"', text1)\n"
+  },
+  {
+    "prompt": "Write a function that takes as input a tuple of numbers (t_1,...,t_{N+1}) and returns a tuple of length N where the i-th element of the tuple is equal to t_i * t_{i+1}.",
+    "answer": "\ndef multiply_elements(test_tup):\n  return tuple(i * j for i, j in zip(test_tup, test_tup[1:]))\n"
+  },
+  {
+    "prompt": "Write a function takes as input two lists [a_1,...,a_n], [b_1,...,b_n] and returns [a_1+b_1,...,a_n+b_n].",
+    "answer": "\ndef sum_list(lst1,lst2):\n  return [a + b for a, b in zip(lst1, lst2)] \n"
+  },
+  {
+    "prompt": "Write a function to remove consecutive duplicates of a given list.",
+    "answer": "\nfrom itertools import groupby\ndef consecutive_duplicates(nums):\n    return [key for key, _ in groupby(nums)] \n"
+  },
+  {
+    "prompt": "Write a function to find the lateral surface area of a cone given radius r and the height h.",
+    "answer": "\nimport math\ndef lateralsurface_cone(r,h):\n  l = math.sqrt(r * r + h * h)\n  return math.pi * r  * l\n"
+  },
+  {
+    "prompt": "Write a function to replace all occurrences of spaces, commas, or dots with a colon.",
+    "answer": "\nimport re\ndef replace_specialchar(text):\n return re.sub(\"[ ,.]\", \":\", text)\n"
+  },
+  {
+    "prompt": "Write a function to find the index of the first occurrence of a given number in a sorted array.",
+    "answer": "\ndef find_first_occurrence(A, x):\n    (left, right) = (0, len(A) - 1)\n    result = -1\n    while left <= right:\n        mid = (left + right) // 2\n        if x == A[mid]:\n            result = mid\n            right = mid - 1\n        elif x < A[mid]:\n            right = mid - 1\n        else:\n            left = mid + 1\n    return result\n"
+  },
+  {
+    "prompt": "Write a python function to find sum of products of all possible sublists of a given list. https://www.geeksforgeeks.org/sum-of-products-of-all-possible-subarrays/",
+    "answer": "\ndef sum_Of_Subarray_Prod(arr):\n    result = 0  # final result\n    partial = 0 # partial sum\n    # stimulate the recursion\n    while arr != []:\n        partial = arr[-1] * (1 + partial)\n        result += partial\n        arr.pop()\n    return result\n"
+  },
+  {
+    "prompt": "Write a python function to toggle bits of the number except the first and the last bit. https://www.geeksforgeeks.org/toggle-bits-number-expect-first-last-bits/",
+    "answer": "\ndef toggle_middle_bits(n): \n    binary = bin(n)[2:]\n    toggled = ''.join(['0' if i == '1' else '1' for i in binary[1:-1]])\n    return int(binary[0] + toggled + binary[-1], 2)\n"
+  },
+  {
+    "prompt": "Write a function to locate the left insertion point for a specified value in sorted order. https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-data-structure-exercise-24.php",
+    "answer": "\nimport bisect\ndef left_insertion(a, x):\n    return bisect.bisect_left(a, x)\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given string is starting with a vowel or not using regex.",
+    "answer": "\nimport re \ndef check_str(string): \n\tregex = '^[aeiouAEIOU][A-Za-z0-9_]*'\n\treturn re.search(regex, string)\n"
+  },
+  {
+    "prompt": "Write a python function to find the index of smallest triangular number with n digits. https://www.geeksforgeeks.org/index-of-smallest-triangular-number-with-n-digits/",
+    "answer": "\nimport math \ndef find_Index(n): \n    x = math.sqrt(2 * math.pow(10,(n - 1)))\n    return round(x)\n"
+  },
+  {
+    "prompt": "Write a function to convert the given tuple to a key-value dictionary using adjacent elements. https://www.geeksforgeeks.org/python-convert-tuple-to-adjacent-pair-dictionary/",
+    "answer": "\ndef tuple_to_dict(test_tup):\n  return dict(test_tup[idx : idx + 2] for idx in range(0, len(test_tup), 2))\n"
+  },
+  {
+    "prompt": "Write a python function to check whether all the characters are same or not.",
+    "answer": "\ndef all_Characters_Same(s) :\n    return all(ch == s[0] for ch in s[1:])\n"
+  },
+  {
+    "prompt": "Write a function to caluclate the area of a tetrahedron.",
+    "answer": "\nimport math\ndef area_tetrahedron(side):\n  return math.sqrt(3)*(side*side)\n"
+  },
+  {
+    "prompt": "Write a function to rotate a given list by specified number of items to the right direction. https://www.geeksforgeeks.org/python-program-right-rotate-list-n/",
+    "answer": "\ndef rotate_right(l, m):\n  return l[-m:] + l[:-m]\n"
+  },
+  {
+    "prompt": "Write a function to check if the given tuple has any none value or not.",
+    "answer": "\ndef check_none(test_tup):\n  return any(ele is None for ele in test_tup)\n"
+  },
+  {
+    "prompt": "Write a function to find numbers within a given range from startnum ti endnum where every number is divisible by every digit it contains. https://www.w3resource.com/python-exercises/lambda/python-lambda-exercise-24.php",
+    "answer": "\ndef divisible_by_digits(startnum, endnum):\n    return [n for n in range(startnum, endnum+1) \\\n                if not any(map(lambda x: int(x) == 0 or n%int(x) != 0, str(n)))]\n"
+  },
+  {
+    "prompt": "Write a function to put spaces between words starting with capital letters in a given string.",
+    "answer": "\nimport re\ndef capital_words_spaces(str1):\n  return re.sub(r\"(\\w)([A-Z])\", r\"\\1 \\2\", str1)\n"
+  },
+  {
+    "prompt": "Write a function to sort a given list of strings of numbers numerically. https://www.geeksforgeeks.org/python-sort-numeric-strings-in-a-list/",
+    "answer": "\ndef sort_numeric_strings(nums_str):\n    return sorted([int(x) for x in nums_str])\n"
+  },
+  {
+    "prompt": "Write a function to add the given tuple to the given list.",
+    "answer": "\ndef add_tuple(test_list, test_tup):\n  return test_list + list(test_tup)\n"
+  },
+  {
+    "prompt": "Write a function to check if the given array represents min heap or not. https://www.geeksforgeeks.org/how-to-check-if-a-given-array-represents-a-binary-heap/",
+    "answer": "\ndef check_min_heap_helper(arr, i):\n    if 2 * i + 2 > len(arr):\n      return True\n    left_child = (arr[i] <= arr[2 * i + 1]) and check_min_heap_helper(arr, 2 * i + 1)\n    right_child = (2 * i + 2 == len(arr)) or  \\\n                (arr[i] <= arr[2 * i + 2] and \\\n                 check_min_heap_helper(arr, 2 * i + 2))\n    return left_child and right_child\ndef check_min_heap(arr):\n  return check_min_heap_helper(arr, 0)\n"
+  },
+  {
+    "prompt": "Write a function to find the nth jacobsthal number. https://www.geeksforgeeks.org/jacobsthal-and-jacobsthal-lucas-numbers/ 0, 1, 1, 3, 5, 11, 21, 43, 85, 171, 341, 683, 1365, 2731, ...",
+    "answer": "\ndef jacobsthal_num(n): \n\tdp = [0] * (n + 1) \n\tdp[0] = 0\n\tdp[1] = 1\n\tfor i in range(2, n+1): \n\t\tdp[i] = dp[i - 1] + 2 * dp[i - 2] \n\treturn dp[n]\n"
+  },
+  {
+    "prompt": "Write a function to find minimum k records from tuple list. https://www.geeksforgeeks.org/python-find-minimum-k-records-from-tuple-list/ - in this case a verbatim copy of test cases",
+    "answer": "\ndef min_k(test_list, K):\n  res = sorted(test_list, key = lambda x: x[1])[:K]\n  return (res) \n"
+  },
+  {
+    "prompt": "We say that an element is common for lists l1, l2, l3 if it appears in all three lists under the same index. Write a function to find common elements from three lists. The function should return a list.",
+    "answer": "\ndef extract_index_list(l1, l2, l3):\n    return [a for a, b, c in zip(l1, l2, l3) if a == b == c]\n"
+  },
+  {
+    "prompt": "Write a function to find the second smallest number in a list.",
+    "answer": "\ndef second_smallest(numbers):\n  sorted_set = sorted(set(numbers))\n  if len(sorted_set) < 2:\n    return None\n  return sorted_set[1]\n"
+  },
+  {
+    "prompt": "Write a function to count the pairs of reverse strings in the given string list. https://www.geeksforgeeks.org/python-program-to-count-the-pairs-of-reverse-strings/",
+    "answer": "\ndef count_reverse_pairs(test_list):\n  return sum(test_list[i+1:].count(s[::-1]) for i, s in enumerate(test_list))\n"
+  },
+  {
+    "prompt": "Write a function to count lists within a list. The function should return a dictionary where every list is converted to a tuple and the value of such tuple is the number of its occurencies in the original list.",
+    "answer": "\ndef unique_sublists(list1):\n    return {tuple(x): list1.count(x) for x in list1}\n"
+  },
+  {
+    "prompt": "Write a function to check whether a given string is a decimal number with a precision of 2.",
+    "answer": "\ndef is_decimal(num):\n    import re\n    dnumre = re.compile(r\"\"\"^[0-9]+(\\.[0-9]{1,2})?$\"\"\")\n    return dnumre.search(num) is not None\n"
+  },
+  {
+    "prompt": "Write a python function to check whether a list of numbers contains only one distinct element or not.",
+    "answer": "\ndef unique_Element(arr):\n    return arr.count(arr[0]) == len(arr)\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given month number contains 30 days or not. Months are given as number from 1 to 12.",
+    "answer": "\ndef check_monthnumber_number(monthnum3):\n  return monthnum3==4 or monthnum3==6 or monthnum3==9 or monthnum3==11\n"
+  },
+  {
+    "prompt": "Write a python function to find the minimum difference between any two elements in a given array. https://www.geeksforgeeks.org/find-minimum-difference-pair/",
+    "answer": "\ndef find_min_diff(arr,n): \n    arr = sorted(arr) \n    diff = 10**20 \n    for i in range(n-1): \n        if arr[i+1] - arr[i] < diff: \n            diff = arr[i+1] - arr[i]  \n    return diff \n"
+  },
+  {
+    "prompt": "Write a python function to count number of digits in a given string.",
+    "answer": "\ndef number_ctr(s):\n    return sum(c.isdigit() for c in s)\n"
+  },
+  {
+    "prompt": "Write a function to find nth polite number. geeksforgeeks.org/n-th-polite-number/",
+    "answer": "\nimport math \ndef is_polite(n): \n\tn = n + 1\n\treturn (int)(n+(math.log((n + math.log(n, 2)), 2))) \n"
+  },
+  {
+    "prompt": "Write a function to return a list of all pairs of consecutive items in a given list.",
+    "answer": "\ndef pair_wise(l1):\n    return list(zip(l1, l1[1:]))\n"
+  },
+  {
+    "prompt": "Write a python function to count the number of pairs whose sum is equal to ‘sum’. The funtion gets as input a list of numbers and the sum,",
+    "answer": "\ndef get_pairs_count(arr, sum_):\n    cnt = 0\n    for n in arr:\n        cnt += arr.count(sum_ - n)\n        if sum_ - n == n:\n            cnt -= 1\n    return cnt / 2\n"
+  },
+  {
+    "prompt": "Write a python function to get the difference between two lists.",
+    "answer": "\ndef Diff(li1,li2):\n    return list(set(li1)-set(li2)) + list(set(li2)-set(li1))\n \n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of fourth power of first n odd natural numbers.",
+    "answer": "\ndef odd_num_sum(n) : \n    j = 0\n    sm = 0\n    for i in range(1,n + 1) : \n        j = (2*i-1) \n        sm = sm + (j*j*j*j)   \n    return sm \n"
+  },
+  {
+    "prompt": "Write a function to check if the given expression is balanced or not. https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/",
+    "answer": "\nfrom collections import deque\ndef check_expression(exp):\n    if len(exp) == 0 or len(exp) % 2 == 1:\n        return False\n    stack = deque()\n    for ch in exp:\n        if ch == '(' or ch == '{' or ch == '[':\n            stack.append(ch)\n        if ch == ')' or ch == '}' or ch == ']':\n            if not stack:\n                return False\n            top = stack.pop()\n            if (top == '(' and ch != ')') or (top == '{' and ch != '}' or (top == '[' and ch != ']')):\n                return False\n    return not stack\n"
+  },
+  {
+    "prompt": "Write a function to remove all the words with k length in the given string.",
+    "answer": "\ndef remove_length(test_str, K):\n  return ' '.join([i for i in test_str.split() if len(i) != K])\n"
+  },
+  {
+    "prompt": "Write a function to find the occurrence and position of the substrings within a string. Return None if there is no match.",
+    "answer": "\nimport re\ndef occurance_substring(text,pattern):\n for match in re.finditer(pattern, text):\n    s = match.start()\n    e = match.end()\n    return (text[s:e], s, e)\n return None\n"
+  },
+  {
+    "prompt": "Write a python function to check whether every odd index contains odd numbers of a given list.",
+    "answer": "\ndef odd_position(nums):\n\treturn all(n % 2 == 1 for n in nums[1::2])\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of non-repeated elements in a given list.",
+    "answer": "\ndef find_sum(arr): \n    return sum(set(arr))\n"
+  },
+  {
+    "prompt": "Write a function to pack consecutive duplicates of a given list elements into sublists.",
+    "answer": "\nfrom itertools import groupby\ndef pack_consecutive_duplicates(list1):\n    return [list(group) for _, group in groupby(list1)]\n"
+  },
+  {
+    "prompt": "Write a function to find the combinations of sums with tuples in the given tuple list. https://www.geeksforgeeks.org/python-combinations-of-sum-with-tuples-in-tuple-list/",
+    "answer": "\nfrom itertools import combinations \ndef find_combinations(test_list):\n  return [tuple(map(sum, zip(*t))) for t in combinations(test_list, 2)]\n"
+  },
+  {
+    "prompt": "Write a python function to check whether the count of divisors is even. https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-24.php",
+    "answer": "\nimport math \ndef count_divisors(n) : \n    cnt = 0\n    for i in range(1, (int)(math.sqrt(n)) + 1) : \n        if (n % i == 0) : \n            if (n / i == i) : \n                cnt = cnt + 1\n            else : \n                cnt = cnt + 2\n    return cnt % 2 == 0\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of all odd length subarrays. https://www.geeksforgeeks.org/sum-of-all-odd-length-subarrays/",
+    "answer": "\ndef odd_length_sum(arr):\n    sum_ = 0\n    n = len(arr)\n    for i in range(n):\n        # arr[i] occurs (i + 1) * (n - i) times in all subarrays\n        times = ((i + 1) * (n - i) + 1) // 2\n        sum_ += arr[i] * times\n    return sum_\n"
+  },
+  {
+    "prompt": "Write a function to find the product of first even and odd number of a given list.",
+    "answer": "\ndef mul_even_odd(list1):\n    first_even = next((el for el in list1 if el%2==0),-1)\n    first_odd = next((el for el in list1 if el%2!=0),-1)\n    return (first_even*first_odd)\n"
+  },
+  {
+    "prompt": "Write a function to convert tuple string to integer tuple.",
+    "answer": "\ndef tuple_str_int(test_str):\n  return tuple(int(num) for num in test_str.replace('(', '').replace(')', '').replace('...', '').split(', '))\n"
+  },
+  {
+    "prompt": "Write a function to locate the right insertion point for a specified value in sorted order.",
+    "answer": "\nimport bisect\ndef right_insertion(a, x):\n    return bisect.bisect_right(a, x)\n"
+  },
+  {
+    "prompt": "Write a function that matches a string that has an a followed by three 'b'.",
+    "answer": "\nimport re\ndef text_match_three(text):\n        patterns = 'ab{3}?'\n        return re.search(patterns,  text)\n"
+  },
+  {
+    "prompt": "Write a function to create a new tuple from the given string and list.",
+    "answer": "\ndef new_tuple(test_list, test_str):\n  return tuple(test_list + [test_str])\n"
+  },
+  {
+    "prompt": "Write a python function to check whether every even index contains even numbers of a given list.",
+    "answer": "\ndef even_position(nums):\n\treturn all(nums[i]%2==i%2 for i in range(len(nums)))\n"
+  },
+  {
+    "prompt": "Write a function to remove tuples from the given tuple.",
+    "answer": "\ndef remove_nested(test_tup):\n  return tuple(e for e in test_tup if not isinstance(e, tuple))\n"
+  },
+  {
+    "prompt": "Write a python function to count the number of lists in a given number of lists.",
+    "answer": "\ndef count_list(input_list): \n    return sum(isinstance(e, list) for e in input_list)\n"
+  },
+  {
+    "prompt": "Write a python function to find the last position of an element in a sorted array.",
+    "answer": "\ndef last(arr,x):\n    return len(arr)-arr[::-1].index(x) - 1\n"
+  },
+  {
+    "prompt": "Write a function that matches a string that has an 'a' followed by anything, ending in 'b'.",
+    "answer": "\nimport re\ndef text_starta_endb(text):\n    patterns = 'a.*?b$'\n    return re.search(patterns,  text)\n"
+  },
+  {
+    "prompt": "Write function to find the sum of all items in the given dictionary.",
+    "answer": "\ndef return_sum(d):\n  return sum(d.values())\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of all odd natural numbers within the range l and r.",
+    "answer": "\ndef sum_odd(n): \n    terms = (n + 1) // 2\n    sum1 = terms * terms \n    return sum1  \ndef sum_in_range(l,r): \n    return sum_odd(r) - sum_odd(l - 1)\n"
+  },
+  {
+    "prompt": "Write a python function to find the sum of an array.",
+    "answer": "\ndef _sum(arr):  \n    return sum(arr)\n"
+  },
+  {
+    "prompt": "Write a function to that rotate left bits by d bits a given number. We assume that the number is 32 bit.",
+    "answer": "\ndef left_rotate(n,d):   \n    INT_BITS = 32\n    return (n << d)|(n >> (INT_BITS - d))  \n"
+  },
+  {
+    "prompt": "Write a function to remove all whitespaces from a string.",
+    "answer": "\ndef remove_all_spaces(text):\n return text.replace(' ', '')\n"
+  },
+  {
+    "prompt": "Write a python function to count the number of equal numbers from three given integers.",
+    "answer": "\ndef test_three_equal(x,y,z):\n  result = set([x,y,z])\n  if len(result) == 3:\n    return 0\n  elif len(result) == 2:\n    return 2\n  else:\n    return 3\n"
+  },
+  {
+    "prompt": "Write a function to check whether the given number is a perfect square or not. https://www.geeksforgeeks.org/check-if-given-number-is-perfect-square-in-cpp/",
+    "answer": "\ndef is_perfect_square(n) :\n    if n < 0:\n        return False\n    return n**(1/2) == int(n**(1/2))\n"
+  },
+  {
+    "prompt": "Write a function to check whether the product of numbers in a list is even or not.",
+    "answer": "\ndef is_product_even(arr): \n    return any(x % 2 == 0 for x in arr)\n"
+  },
+  {
+    "prompt": "Write a function that returns the list in a list of lists whose sum of elements is the highest.",
+    "answer": "\ndef max_sum_list(lists):\n return max(lists, key=sum)\n"
+  },
+  {
+    "prompt": "Write a function to find maximum run of uppercase characters in the given string.",
+    "answer": "\ndef max_run_uppercase(test_str):\n  cnt = 0\n  res = 0\n  for idx in range(0, len(test_str)):\n    if test_str[idx].isupper():\n      cnt += 1\n    else:\n      res = cnt\n      cnt = 0\n  if test_str[len(test_str) - 1].isupper():\n    res = cnt\n  return res\n"
+  },
+  {
+    "prompt": "Write a python function to find the first odd number in a given list of numbers.",
+    "answer": "\ndef first_odd(nums):\n  first_odd = next((el for el in nums if el%2!=0), None)\n  return first_odd\n"
+  },
+  {
+    "prompt": "Write a function to check if the given tuples contain the k or not.",
+    "answer": "\ndef check_K(test_tup, K):\n  return K in test_tup\n"
+  },
+  {
+    "prompt": "Write a function to check if each element of second tuple is smaller than its corresponding element in the first tuple.",
+    "answer": "\ndef check_smaller(test_tup1, test_tup2):\n  return all(x > y for x, y in zip(test_tup1, test_tup2))\n"
+  }
+]

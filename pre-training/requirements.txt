@@ -1,0 +1,14 @@
+--find-links https://download.pytorch.org/whl/cu121
+torch
+torchvision 
+
+packaging
+wheel
+six
+regex
+pyyaml
+sentencepiece
+pybind11
+ninja
+wandb
+einops

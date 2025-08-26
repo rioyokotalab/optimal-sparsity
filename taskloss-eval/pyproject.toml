@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taskloss-eval"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "vllm"
+]
+
+[project.optional-dependencies]
+dev = [
+  "black==24.10.0",
+  "blackdoc==0.3.9",
+  "pytest"
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.venv
+  | venv
+  | outputs
+  | results
+)/
+'''
+
+[tool.setuptools.packages.find]
+include = ["taskloss_eval*"]
+exclude = ["datasets*", "results*", "outputs*", "scripts*", ".venv*"]
