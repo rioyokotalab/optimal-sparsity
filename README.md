@@ -1,7 +1,7 @@
 # Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks
 
 <p align="center">
-  📄 <a href="(TBA)">[Paper]</a> |
+  📄 <a href="https://arxiv.org/abs/2508.18672">[Paper]</a> |
   🤗 <a href="https://huggingface.co/collections/llm-jp/optimal-sparsity-math-68a4a5fa635fd1c1628280f1">[Hugging Face]</a>
   💻 <a href="https://github.com/rioyokotalab/optimal-sparsity">[Code]</a> |
   📊 <a href="(TBA)">[Log]</a> |
@@ -51,12 +51,13 @@ Their contributions and the fact that these codebases are publicly available hav
 ## Citation
 
 ```bibtex
-@inproceedings{
-  nakamura2025optimal,
-  title={Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks},
-  author={Taishi Nakamura and Satoki Ishikawa and Masaki Kawamura and Takumi Okamoto and Daisuke Nohara and Jun Suzuki and Rio Yokota},
-  booktitle={2nd AI for Math Workshop @ ICML 2025},
-  year={2025},
-  url={https://openreview.net/forum?id=Ewj06opLqW}
+@article{nakamura2025optimalsparsitymixtureofexpertslanguage,
+      title={Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks}, 
+      author={Taishi Nakamura and Satoki Ishikawa and Masaki Kawamura and Takumi Okamoto and Daisuke Nohara and Jun Suzuki and Rio Yokota},
+      year={2025},
+      eprint={2508.18672},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2508.18672}, 
 }
 ```
