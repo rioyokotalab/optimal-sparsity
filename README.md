@@ -33,7 +33,7 @@ Follow the environment setup instructions of [volcengine/verl](https://github.co
   - For other evaluations, we use commit `1044db9`.
 
 ```bash
-git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
+git clone https://github.com/EleutherAI/lm-evaluation-harness
 cd lm-evaluation-harness/
 git checkout 1044db9
 pip install -e .
@@ -41,6 +41,7 @@ pip install vllm
 ```
 
 You can reproduce the results by running `scripts/lm-evaluation-harness/math_eval.sh`
+For code evaluation, use `scripts/lm-evaluation-harness/code_eval.sh`
 
 - For task loss evaluation, please follow the README in the `taskloss-eval` directory:  
   [taskloss-eval/README.md](https://github.com/rioyokotalab/optimal-sparsity/blob/main/taskloss-eval/README.md)
