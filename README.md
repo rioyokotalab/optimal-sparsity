@@ -2,7 +2,8 @@
 
 <p align="center">
   📄 <a href="https://arxiv.org/abs/2508.18672">[Paper]</a> |
-  🤗 <a href="https://huggingface.co/collections/llm-jp/optimal-sparsity-math-68a4a5fa635fd1c1628280f1">[Hugging Face]</a>
+  🤗 <a href="https://huggingface.co/collections/llm-jp/optimal-sparsity-math-68a4a5fa635fd1c1628280f1">[Hugging Face Math checkpoints]</a>
+  🤗 <a href="https://huggingface.co/collections/llm-jp/optimal-sparsity-math-68a4a5fa635fd1c1628280f1">[Hugging Face Code checkpoints]</a>
   💻 <a href="https://github.com/rioyokotalab/optimal-sparsity">[Code]</a> |
   📊 <a href="(TBA)">[Log]</a> |
 </p>
