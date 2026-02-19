@@ -63,13 +63,12 @@ Their contributions and the fact that these codebases are publicly available hav
 ## Citation
 
 ```bibtex
-@article{nakamura2025optimalsparsitymixtureofexpertslanguage,
-      title={Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks},
-      author={Taishi Nakamura and Satoki Ishikawa and Masaki Kawamura and Takumi Okamoto and Daisuke Nohara and Jun Suzuki and Rio Yokota},
-      year={2025},
-      eprint={2508.18672},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2508.18672},
+@inproceedings{
+    nakamura2026optimal,
+    title={Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks},
+    author={Taishi Nakamura and Satoki Ishikawa and Masaki Kawamura and Takumi Okamoto and Daisuke Nohara and Jun Suzuki and Rio Yokota},
+    booktitle={The Fourteenth International Conference on Learning Representations},
+    year={2026},
+    url={https://openreview.net/forum?id=XFw2EPRUUR}
 }
 ```
