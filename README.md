@@ -5,12 +5,8 @@
   🤗 <a href="https://huggingface.co/collections/llm-jp/optimal-sparsity-math-68a4a5fa635fd1c1628280f1">[Hugging Face Math checkpoints]</a>
   🤗 <a href="https://huggingface.co/collections/llm-jp/optimal-sparsity-math-68a4a5fa635fd1c1628280f1">[Hugging Face Code checkpoints]</a>
   💻 <a href="https://github.com/rioyokotalab/optimal-sparsity">[Code]</a> |
-  📊 <a href="(TBA)">[Log]</a> |
+  📊 <a href="https://wandb.ai/taishi-nakamura/Optimal-Sparsity">[Log]</a> |
 </p>
-
-## TODOs
-
-- [ ] Logs
 
 ## Quickstart
 
