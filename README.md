@@ -22,7 +22,7 @@ All training data used in this work are publicly available. Please refer to the 
 We sincerely thank the contributors who made these datasets publicly accessible.
 
 The pre-training launch scripts for the 65 released checkpoints are under
-[`pre-training/scripts/optimal-sparsity-math/`](pre-training/scripts/optimal-sparsity-math/).
+[`scripts/pre-training/`](scripts/pre-training/).
 Each `optimal-sparsity-math-d{D}-E{E}-k{K}-{TOTAL}-A{ACTIVE}.sh` corresponds 1:1
 to the Hugging Face model of the same name (`d` = hidden size, `E` = number of
 experts, `k` = top-k, `TOTAL`/`ACTIVE` = total / active parameters).
